@@ -7,6 +7,9 @@ Este laboratório aborda a criação de uma aplicação serverless na AWS para p
 
 ---
 
+![Arquitetura AWS](arquitetura.png)
+
+
 ## **2. Componentes da Arquitetura**
 
 ### **Primeira Parte – Entrada Via API Gateway**
