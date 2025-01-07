@@ -1,4 +1,4 @@
-#**Documentação – Single Table Design no DynamoDB**
+# **Documentação – Single Table Design no DynamoDB**
 
 Esta documentação descreve como armazenar, em uma única tabela do DynamoDB, as informações de pedido, empresa (fornecedor), cliente, itens e informações adicionais (pagamento, envio, etc.). Também explica como o GSI (Global Secondary Index) é utilizado para agilizar a área de picking e identificar itens sem estoque.
 
