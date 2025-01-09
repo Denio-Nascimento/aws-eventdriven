@@ -69,7 +69,7 @@ Nesta atividade, você irá:
    - No menu de serviços, selecione **EventBridge**.
 
 2. **Criar um novo Event Bus:**
-   - No menú a esqueda clique em **Event buses**
+   - No menu a esqueda clique em **Event buses**
    - Clique em **Create Event Bus**.
    - **Name:** `event-bus-pedidos`.
 
