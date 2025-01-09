@@ -92,7 +92,7 @@ def validate_order(order):
     return order["order_status"] in ["Novo Pedido", "Alterar Pedido", "Cancela Pedido"]
 ```
 
-### **4.2. Empacotar a Layer**
+### **4.2. Compactar a Layer**
 1. Crie uma pasta `python` e coloque o arquivo `validation.py` dentro dela.
 2. Comprime a pasta em um arquivo ZIP:
    ```bash
@@ -100,13 +100,14 @@ def validate_order(order):
    ```
 
 ### **4.3. Fazer Upload da Layer**
-1. No console da AWS, vá para **Lambda** > **Layers**.
-2. Clique em **Create layer**.
-3. Preencha os campos:
+1. No console da AWS, vá para **Lambda**.
+2. No menu a esqueda clique em **Layers**.
+3. Clique em **Create layer**.
+4. Preencha os campos:
    - **Name:** `order-validation-layer`
    - **Upload a .zip file:** faça upload do `validation_layer.zip`.
-   - **Runtime:** selecione `Python 3.9`.
-4. Clique em **Create**.
+   - **Runtime:** selecione `Python 3.13`.
+5. Clique em **Create**.
 
 ---
 
@@ -119,7 +120,7 @@ def validate_order(order):
 3. Escolha **Author from scratch**.
 4. Preencha os campos:
    - **Function name:** `prevalidation-lambda`
-   - **Runtime:** `Python 3.9`.
+   - **Runtime:** `Python 3.13`.
 5. Clique em **Create function**.
 
 ### **5.2. Vincular a Layer de Validação**
