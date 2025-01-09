@@ -1,4 +1,12 @@
-# Passo a Passo da Atividade Prática
+# Introdução ao Laboratório de Processamento de Pedidos com AWS
+
+Este laboratório tem como objetivo ensinar a criação de uma arquitetura **serverless** robusta na AWS para processar pedidos de venda a partir de arquivos JSON armazenados no Amazon S3. Durante esta atividade prática, você aprenderá a implementar uma solução com validação de pedidos, envio de eventos ao EventBridge, registro de dados no DynamoDB e tratamento de erros com SQS.
+
+A arquitetura proposta é altamente escalável e permite o uso de **Lambda Layers** para reaproveitamento de código, seguindo as melhores práticas de modularidade e manutenção. Ao final do laboratório, você terá uma aplicação que valida os pedidos, identifica erros e envia notificações para monitoramento.
+
+---
+
+## **O que Você Irá Aprender**
 
 Nesta atividade, você irá:
 
@@ -154,6 +162,7 @@ EVENT_BUS_NAME = os.getenv('EVENT_BUS_NAME')
 
 def lambda_handler(event, context):
     """Função principal para processar pedidos do S3 e enviar para o EventBridge."""
+    logger.info("Iniciando o processamento de pedidos.")
     for record in event['Records']:
         bucket_name = record['s3']['bucket']['name']
         file_name = record['s3']['object']['key']
