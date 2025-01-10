@@ -1,8 +1,6 @@
 # **Laboratório Serverless AWS: Entrada de Pedido pelo Data Lake
 
-Este laboratório tem como objetivo ensinar a criação de uma arquitetura **Event-driven Architecture (EDA)
-![image](https://github.com/user-attachments/assets/bae2442c-253d-4140-9039-4a7944d01a24)
-** robusta na AWS para processar pedidos de venda a partir de arquivos JSON armazenados no Amazon S3. Durante esta atividade prática, você aprenderá a implementar uma solução com validação de pedidos, envio de eventos ao EventBridge, registro de dados no DynamoDB e tratamento de erros com SQS.
+Este laboratório tem como objetivo ensinar a criação de uma arquitetura **Event Driven - Event-driven Architecture (EDA)**  na AWS para processar pedidos de venda a partir de arquivos JSON armazenados no Amazon S3. Durante esta atividade prática, você aprenderá a implementar uma solução com validação de pedidos, envio de eventos ao EventBridge, registro de dados no DynamoDB e tratamento de erros com SQS.
 
 A arquitetura proposta é altamente escalável e permite o uso de **Lambda Layers** para reaproveitamento de código, seguindo as melhores práticas de modularidade e manutenção. Ao final do laboratório, você terá uma aplicação que valida os pedidos, identifica erros e envia notificações para monitoramento.
 
@@ -12,7 +10,7 @@ A arquitetura proposta é altamente escalável e permite o uso de **Lambda Layer
 
 Nesta atividade, você irá:
 
-- Criar uma fila de erros no Amazon SQS para receber pedidos inválidos.
+- Criar uma fila no Amazon SQS para receber pedidos.
 - Criar uma tabela no Amazon DynamoDB para registrar arquivos e pedidos processados.
 - Criar um barramento de eventos no Amazon EventBridge.
 - Criar Regras do EventBridge
@@ -26,7 +24,7 @@ Nesta atividade, você irá:
 
 ### **Pré-requisitos**
 
-- **Conta AWS ativa** com permissões para criar recursos (S3, SQS, Lambda, EventBridge e IAM).
+- **Conta AWS ativa** com permissões para criar recursos (S3, SQS, SNS, Lambda, EventBridge e IAM).
 - **Acesso ao console da AWS** via navegador web.
 
 
@@ -44,9 +42,33 @@ Nesta atividade, você irá:
 
 ---
 
-## **Etapa 1: Criar as Filas SQS**
+## **Etapa 1: Criar o Bucket S3 e o Prefixo para os Pedidos**
 
-### **1.1. Fila Standard: `sqs-pedidos-json`**
+1. **Acessar o Amazon S3:**
+
+   - Faça login na console da AWS.
+   - No menu de serviços, selecione **S3** (pode usar a barra de pesquisa).
+   - **AWS Region:** Certifique-se de estar na região em que pretende trabalhar. (por exemplo, **us-east-1**).
+
+2. **Criar um Bucket:**
+
+   - Clique em **Create bucket**.
+   - **Bucket name:** `translogistica-pedidos` (os nomes de bucket devem ser exclusivos globalmente; se esse nome não estiver disponível, escolha outro nome exclusivo, como `translogistica-pedidos-seu-nome`).
+   - Mantenha as demais configurações padrão.
+   - Clique em **Create bucket**.
+
+3. **Criar o Prefixo (Pasta) "novos-pedidos/":**
+
+   - Clique no nome do bucket criado para acessá-lo.
+   - Clique em **Create folder**.
+   - **Folder name:** `novos-pedidos`
+   - Clique em **Create folder**.
+
+---
+
+## **Etapa 2: Criar as Filas SQS**
+
+### **2.1. Fila Standard: `sqs-pedidos-json`**
 Esta fila é utilizada para armazenar a notificação de novos arquivos JSON carregados no bucket S3.
 
 1. Acesse o console da **AWS** e selecione **SQS**.
@@ -55,7 +77,7 @@ Esta fila é utilizada para armazenar a notificação de novos arquivos JSON car
 4. **Queue Name:** `sqs-pedidos-json`.
 5. Clique em **Create Queue**.
 
-### **1.2. Fila FIFO: `sqs-pedidos-validos.fifo`**
+### **2.2. Fila FIFO: `sqs-pedidos-validos.fifo`**
 Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
 
 1. Clique em **Create queue**.
@@ -67,14 +89,16 @@ Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
    - **MaxReceiveCount:** 3 (número máximo de tentativas).
 6. Clique em **Create Queue**.
 
-### **1.3. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
+### **2.3. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
 Esta fila FIFO armazena pedidos que não puderam ser processados após o número máximo de tentativas.
 
 1. Crie uma fila **FIFO** com o nome `sqs-pedidos-dlq.fifo`.
 2. Habilite **Content-based deduplication**.
 
-### **1.4. Filas por Status de Pedido e suas DLQs**
+### **2.4. Filas por Status de Pedido e suas DLQs**
 Para garantir o encaminhamento correto dos pedidos de acordo com o status, crie uma fila FIFO e sua respectiva DLQ FIFO para cada tipo de status de pedido:
+
+  Repita os procedimento dos tópicos 2.2 e 2.3
 
 - **`sqs-pedido-novo.fifo`**: recebe pedidos com status "Novo".
   - **DLQ:** `sqs-pedido-novo-dlq.fifo`.
@@ -87,7 +111,7 @@ Essas filas permitem separar o fluxo de processamento e podem ser usadas para di
 
 ---
 
-## **Etapa 2: Criar Tabela no DynamoDB**
+## **Etapa 3: Criar Tabela no DynamoDB**
 
 1. **Acessar o Amazon DynamoDB:**
    - No menu de serviços, selecione **DynamoDB**.
@@ -105,7 +129,7 @@ Essas filas permitem separar o fluxo de processamento e podem ser usadas para di
 
 ---
 
-## **Etapa 3: Criar o Barramento de Eventos no EventBridge**
+## **Etapa 4: Criar o Barramento de Eventos no EventBridge**
 
 1. **Acessar o Amazon EventBridge:**
    - No menu de serviços, selecione **EventBridge**.
@@ -120,7 +144,7 @@ Essas filas permitem separar o fluxo de processamento e podem ser usadas para di
 
 ---
 
-## **Etapa 4: Criar as Regras do EventBridge**
+## **Etapa 5: Criar as Regras do EventBridge**
 As regras do EventBridge definem o roteamento dos eventos de pedidos conforme o status.
 
 1. **Nome:** `regra-pedido-novo`.
@@ -135,9 +159,9 @@ As regras do EventBridge definem o roteamento dos eventos de pedidos conforme o 
 
 ---
 
-## **Etapa 5: Criar a Layer de Validação**
+## **Etapa 6: Criar a Layer de Validação**
 
-### **5.1. Código da Layer (`validation.py`)**
+### **6.1. Código da Layer (`validation.py`)**
 Esta layer contém a função responsável por validar os campos obrigatórios do pedido.
 
 ~~~python
@@ -149,7 +173,7 @@ def validate_order(order):
     return order["order_status"] in ["PedidoNovo", "PedidoAlterado", "PedidoCancelado"]
 ~~~
 
-### **5.2. Compactação e Upload**
+### **6.2. Compactação e Upload**
 1. Crie a pasta `python` e mova `validation.py` para dentro.
 2. No terminal:
 ~~~bash
@@ -160,7 +184,7 @@ zip -r validation_layer.zip python/
 
 ---
 
-## **Etapa 6: Configurar SNS**
+## **Etapa 7: Configurar SNS**
 O SNS é utilizado para enviar notificações por e-mail quando um pedido falha na validação.
 
 1. Acesse **SNS** > **Create topic** > **FIFO**.
@@ -172,9 +196,9 @@ O SNS é utilizado para enviar notificações por e-mail quando um pedido falha 
 ---
 
 
-## **Etapa 7: Criar as Funções Lambda**
+## **Etapa 8: Criar as Funções Lambda**
 
-### **7.1. Lambda de Extração e Controle de Duplicidade**
+### **8.1. Lambda de Extração e Controle de Duplicidade**
 Esta função lê o arquivo JSON do S3, registra os pedidos no DynamoDB para evitar duplicação e envia os pedidos para a fila FIFO.
 
 #### **Passos:**
@@ -261,7 +285,7 @@ Adicione a seguinte política ao role da Lambda de Extração:
 
 
 
-### **7.2. Lambda de Validação**
+### **8.2. Lambda de Validação**
 Esta função valida o conteúdo do pedido e encaminha os eventos para o EventBridge com base no status.
 
 #### **Passos:**
@@ -341,7 +365,7 @@ def send_to_eventbridge(order):
 
 ---
 
-## **Etapa 8: Teste do Fluxo Completo**
+## **Etapa 9: Teste do Fluxo Completo**
 
 1. Envie um arquivo JSON para o bucket S3.
 2. Verifique os logs no **CloudWatch**.
