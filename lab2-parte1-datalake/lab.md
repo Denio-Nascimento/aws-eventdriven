@@ -77,7 +77,13 @@ Esta fila é utilizada para armazenar a notificação de novos arquivos JSON car
 4. **Queue Name:** `sqs-pedidos-json`.
 5. Clique em **Create Queue**.
 
-### **2.2. Fila FIFO: `sqs-pedidos-validos.fifo`**
+### **2.2. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
+Esta fila FIFO armazena pedidos que não puderam ser processados após o número máximo de tentativas.
+
+1. Crie uma fila **FIFO** com o nome `sqs-pedidos-dlq.fifo`.
+2. Habilite **Content-based deduplication**.
+
+### **2.3. Fila FIFO: `sqs-pedidos-validos.fifo`**
 Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
 
 1. Clique em **Create queue**.
@@ -85,15 +91,13 @@ Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
 3. **Queue Name:** `sqs-pedidos-validos.fifo`.
 4. Marque **Content-based deduplication** para evitar envios duplicados.
 5. Configure uma DLQ FIFO para tratar mensagens que falham:
-   - **Dead-letter queue:** `sqs-pedidos-dlq.fifo`.
+   - Em **Dead-letter queue:** Clica em **Enabled**
+   - **Choose queue:** `sqs-pedidos-dlq.fifo`.
    - **MaxReceiveCount:** 3 (número máximo de tentativas).
 6. Clique em **Create Queue**.
 
 ### **2.3. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
 Esta fila FIFO armazena pedidos que não puderam ser processados após o número máximo de tentativas.
-
-1. Crie uma fila **FIFO** com o nome `sqs-pedidos-dlq.fifo`.
-2. Habilite **Content-based deduplication**.
 
 ### **2.4. Filas por Status de Pedido e suas DLQs**
 Para garantir o encaminhamento correto dos pedidos de acordo com o status, crie uma fila FIFO e sua respectiva DLQ FIFO para cada tipo de status de pedido:
