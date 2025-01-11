@@ -148,26 +148,76 @@ Essas filas permitem separar o fluxo de processamento e podem ser usadas para di
 
 ---
 
-## **Etapa 5: Criar as Regras do EventBridge**
+## **Etapa 4: Criar as Regras do EventBridge**
 As regras do EventBridge definem o roteamento dos eventos de pedidos conforme o status.
 
-1. **Acessar o Amazon EventBridge:**
-   - No menu de serviços, selecione **EventBridge**.
+### **Passos Detalhados para Criar uma Regra no EventBridge**
 
-2. **Criar um novo Event Bus:**
-   - No menu a esqueda clique em **Rules**
-   - Clique em **Create rule**.
+#### **1. Regra `regra-pedido-novo`**
+**Objetivo:** Roteia os pedidos com status "Novo" para a fila SQS `sqs-pedido-novo.fifo`.
 
-3. **Nome:** `regra-pedido-novo`.
-   - **Filtro:** `{ "detail-type": ["PedidoNovo"] }`
-   - **Destino:** Fila `sqs-pedido-novo.fifo`.
-   - Clique em **Next**
-2. **Nome:** `regra-pedido-alterado`.
-   - **Filtro:** `{ "detail-type": ["PedidoAlterado"] }`
-   - **Destino:** Fila `sqs-pedido-alterado.fifo`.
-3. **Nome:** `regra-pedido-cancelado`.
-   - **Filtro:** `{ "detail-type": ["PedidoCancelado"] }`
-   - **Destino:** Fila `sqs-pedido-cancelado.fifo`.
+**Passos detalhados:**
+1. Acesse o console **EventBridge**.
+2. No painel lateral esquerdo, clique em **Rules** (Regras).
+3. Clique em **Create rule** (Criar regra).
+4. **Name:** `regra-pedido-novo`.
+5. **Description:** "Roteia pedidos novos para a fila `sqs-pedido-novo.fifo`".
+6. Em **Event bus**, selecione `event-bus-pedidos`.
+7. **Rule type:** escolha **Event pattern**.
+8. Clique em **Next** (Próximo).
+
+**Definir o Padrão de Evento:**
+1. Em **Event Source**, selecione **Custom event bus**.
+2. Em **Event pattern**, insira o seguinte JSON:
+   ```json
+   {
+     "detail-type": ["PedidoNovo"]
+   }
+   ```
+
+**Configurar Destino:**
+1. Em **Select target**, selecione **SQS queue**.
+2. Em **Queue**, selecione `sqs-pedido-novo.fifo`.
+3. No campo **Message group ID*** (obrigatório), insira um valor, por exemplo: `orders-group`.
+4. Clique em **Next** (Próximo).
+
+**Revisão e Criação:**
+1. Revise as informações inseridas.
+2. Clique em **Create rule** (Criar regra).
+
+---
+
+#### **2. Regra `regra-pedido-alterado`**
+**Objetivo:** Roteia os pedidos com status "Alterado" para a fila SQS `sqs-pedido-alterado.fifo`.
+
+**Passos detalhados:**
+1. **Name:** `regra-pedido-alterado`.
+2. **Description:** "Roteia pedidos alterados para a fila `sqs-pedido-alterado.fifo`".
+3. **Event pattern:**
+   ```json
+   {
+     "detail-type": ["PedidoAlterado"]
+   }
+   ```
+4. **Destino:** selecione `sqs-pedido-alterado.fifo`.
+
+---
+
+#### **3. Regra `regra-pedido-cancelado`**
+**Objetivo:** Roteia os pedidos com status "Cancelado" para a fila SQS `sqs-pedido-cancelado.fifo`.
+
+**Passos detalhados:**
+1. **Name:** `regra-pedido-cancelado`.
+2. **Description:** "Roteia pedidos cancelados para a fila `sqs-pedido-cancelado.fifo`".
+3. **Event pattern:**
+   ```json
+   {
+     "detail-type": ["PedidoCancelado"]
+   }
+   ```
+4. **Destino:** selecione `sqs-pedido-cancelado.fifo`.
+
+---
 
 ---
 
