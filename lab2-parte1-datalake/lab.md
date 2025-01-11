@@ -151,9 +151,17 @@ Essas filas permitem separar o fluxo de processamento e podem ser usadas para di
 ## **Etapa 5: Criar as Regras do EventBridge**
 As regras do EventBridge definem o roteamento dos eventos de pedidos conforme o status.
 
-1. **Nome:** `regra-pedido-novo`.
+1. **Acessar o Amazon EventBridge:**
+   - No menu de serviços, selecione **EventBridge**.
+
+2. **Criar um novo Event Bus:**
+   - No menu a esqueda clique em **Rules**
+   - Clique em **Create rule**.
+
+3. **Nome:** `regra-pedido-novo`.
    - **Filtro:** `{ "detail-type": ["PedidoNovo"] }`
    - **Destino:** Fila `sqs-pedido-novo.fifo`.
+   - Clique em **Next**
 2. **Nome:** `regra-pedido-alterado`.
    - **Filtro:** `{ "detail-type": ["PedidoAlterado"] }`
    - **Destino:** Fila `sqs-pedido-alterado.fifo`.
