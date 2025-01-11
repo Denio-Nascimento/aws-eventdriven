@@ -148,8 +148,8 @@ Essas filas permitem separar o fluxo de processamento e podem ser usadas para di
 
 ---
 
-## **Etapa 4: Criar as Regras do EventBridge**
-As regras do EventBridge definem o roteamento dos eventos de pedidos conforme o status.
+## **Etapa 5: Criar as Regras do EventBridge**
+As regras do EventBridge definem o roteamento dos eventos de pedidos conforme o status e encaminha para as respectivas filas do SQS para serem processados.
 
 ### **Passos Detalhados para Criar uma Regra no EventBridge**
 
