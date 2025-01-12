@@ -47,7 +47,7 @@ Nesta atividade, você irá:
 
 ---
 
-## **Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos
+## **Etapa 1**: Criar o Bucket S3 e o Prefixo para os Pedidos
 
 1. **Acessar o Amazon S3:**
 
