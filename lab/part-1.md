@@ -1,8 +1,13 @@
 # Laboratório Serverless AWS: Entrada de Pedido pelo Data Lake
+Este laboratório tem como objetivo ensinar a criação de uma arquitetura **Event Driven - Event-driven Architecture (EDA)**  na AWS para processar pedidos de venda a partir de arquivos JSON armazenados no Amazon S3 e pelo AWS API Gateway.
 
-Este laboratório tem como objetivo ensinar a criação de uma arquitetura **Event Driven - Event-driven Architecture (EDA)**  na AWS para processar pedidos de venda a partir de arquivos JSON armazenados no Amazon S3. Durante esta atividade prática, você aprenderá a implementar uma solução com validação de pedidos, envio de eventos ao EventBridge, registro de dados no DynamoDB e tratamento de erros com SQS.
+O laboratório está dividido em 4 partes separado em 4 arquivos que devem ser seguido na ordem pois um é o complemento do outro.
 
-A arquitetura proposta é altamente escalável e permite o uso de **Lambda Layers** para reaproveitamento de código, seguindo as melhores práticas de modularidade e manutenção. Ao final do laboratório, você terá uma aplicação que valida os pedidos, identifica erros e envia notificações para monitoramento.
+A primeira parte (que se trata desse arquivo) você aprenderá a desenvolver um AWS Lambda que é responsável por receber mensagens de uma fila SQS padrão com informações de eventos de S3 ao serem criados novos arquivos. O Lambda lê o evento do S3, faz o download do arquivo, processa os pedidos e registra as informações no DynamoDB. Também envia os pedidos para uma fila SQS FIFO
+
+A segunda parte do fluxo de processamento de pedidos, será criada uma Lambda de validação que lê mensagens da fila sqs-pedidos-validos.fifo, valida os dados e, dependendo do resultado, envia eventos para o Amazon EventBridge ou alertas para o Amazon SNS. Também serão configurados um Event Bus com três regras de roteamento para diferentes status de pedido (Pendente, Alterar Pedido e Cancela Pedido), filas SQS FIFO de destino para cada status com suas respectivas DLQs, e testes do fluxo serão realizados via console.
+
+Na terceira parte do fluxo, será criado um API Gateway para receber pedidos como alternativa ao envio para o Data Lake (S3). Uma Lambda, utilizando o mesmo Layer de validação da etapa anterior, processará os pedidos recebidos, validando os dados e encaminhando os pedidos válidos para o Event Bus, que foi configurado com as regras de roteamento na etapa anterior. Em caso de falha na validação, o usuário receberá uma mensagem de erro diretamente pelo API Gateway. O fluxo será testado para garantir o roteamento correto dos pedidos válidos e o retorno apropriado de erros para entradas inválidas.
 
 ---
 
