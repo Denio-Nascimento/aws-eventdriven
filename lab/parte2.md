@@ -136,9 +136,24 @@ def send_to_sns_alert(order, message):
 ### 2.1. Acessar a Role
 1. Na página da função Lambda, vá em **Configuration** > **Permissions**.
 2. Clique no nome da role (algo como `validation-and-send-lambda-role-xyz`), abrindo o console do IAM.
+   
+
+
+     - Na página da role IAM, clique novamente em **Add permissions**.
+
+     - Escolha **Create inline policy**.
 
 ### 2.2. Adicionar Política Inline para SQS (invocada)
-Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa de permissão pass-through do SQS. Se for **SQS como trigger**, a permissão principal é dada pelo serviço. Porém, caso seja necessário explicitamente (por exemplo, a Lambda possa deletar mensagens, etc.), você adiciona algo como:
+Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa de permissão pass-through do SQS. Se for **SQS como trigger**, a permissão principal é dada pelo serviço. Porém, caso seja necessário explicitamente (por exemplo, a Lambda possa deletar mensagens, etc.)
+
+   - Na página da role IAM, clique novamente em **Add permissions**.
+
+   - Escolha **Create inline policy**.
+
+   - **Definir a Política:**
+
+   - Selecione a aba **JSON** e cole o seguinte código, substituindo `<YOUR_REGION>` pela sua região (por exemplo, `us-east-1` para **N.Virginia** ou `us-east-1` para **Ohio**) e `<YOUR_ACCOUNT_ID>` pelo ID da sua conta AWS (este pode ser encontrado no canto superior direito da console da AWS; clique no nome do usuário e o ID da conta aparecerá como 'Account ID: 123456789012'; é um número de 12 dígitos):
+
 ```json
 {
   "Version": "2012-10-17",
@@ -150,14 +165,27 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
       ],
-      "Resource": "arn:aws:sqs:us-east-1:123456789012:sqs-pedidos-validos.fifo"
+      "Resource": "arn:aws:sqs:<YOUR_REGION>:<YOUR_ACCOUNT_ID>:sqs-pedidos-validos.fifo"
     }
   ]
 }
 ```
-*(Ajuste Região e ARN da fila conforme sua conta.)*
+   - Clique em **Next**.
+
+   - Em **Policy name** digite `LambdaSQSPolicy`
+
+   - Clique em **Create policy**.
+
+**Nota:** Certifique-se de substituir `<YOUR_REGION>` e `<YOUR_ACCOUNT_ID>` pelos valores corretos.
 
 ### 2.3. Adicionar Política para EventBridge
+
+   - Incluia mais uma Politica inline
+     
+   - Na página da role IAM, clique novamente em **Add permissions**.
+     
+   - Escolha **Create inline policy**.
+     
 ```json
 {
   "Version": "2012-10-17",
@@ -165,7 +193,7 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
     {
       "Effect": "Allow",
       "Action": "events:PutEvents",
-      "Resource": "arn:aws:events:us-east-1:123456789012:event-bus/event-bus-pedidos"
+      "Resource": "arn:aws:events:<YOUR_REGION>:<YOUR_ACCOUNT_ID>:event-bus/event-bus-pedidos"
     }
   ]
 }
@@ -180,7 +208,7 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
     {
       "Effect": "Allow",
       "Action": "sns:Publish",
-      "Resource": "arn:aws:sns:us-east-1:123456789012:sns-notificacoes-erros"
+      "Resource": "arn:aws:sns:<YOUR_REGION>:<YOUR_ACCOUNT_ID>:sns-notificacoes-erros"
     }
   ]
 }
