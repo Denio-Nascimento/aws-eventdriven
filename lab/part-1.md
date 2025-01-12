@@ -16,7 +16,7 @@ Nesta atividade, você irá:
 2. [Seção 1: Detalhes](#secao-1-detalhes)
 3. [Seção 2: Recursos Externos](#secao-2-recursos-externos)
 
-1. [**Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos](#bucket-S3).
+1. [**Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
 - **Etapa 2:** Criar as Filas SQS
   - **2.1** Criar fila SQS Standard para o S3
   - **2.3** Criar fila FIFO para armazena pedidos de forma individual
