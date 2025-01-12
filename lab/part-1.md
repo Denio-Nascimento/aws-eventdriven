@@ -6,24 +6,16 @@ A arquitetura proposta é altamente escalável e permite o uso de **Lambda Layer
 
 ---
 
-## **O que Você Irá Aprender**
+## **O que Você Irá Aprender nesta atividade**
 
-Nesta atividade, você irá:
-
-
-## Índice
-1. [Introdução](#Criar o Bucket S3 e o Prefixo para os Pedidos)
-2. [Seção 1: Detalhes](#secao-1-detalhes)
-3. [Seção 2: Recursos Externos](#secao-2-recursos-externos)
-
-1. [**Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
-- **Etapa 2:** Criar as Filas SQS
-  - **2.1** Criar fila SQS Standard para o S3
-  - **2.3** Criar fila FIFO para armazena pedidos de forma individual
-  - **2.2** Criar fila FIFO dlq para armazena pedidos que não puderam ser processados após o número máximo de tentativas.
-- **Etapa 3:** Criar Tabela no DynamoDB para controle de indempotência de pedidos e arquivos JSON. 
-- **Etapa 4:** Lambda de Extração de pedido e Controle de Duplicidade
-- **Etapa 5:** Criar o Triger para Lambda SQS
+- [**Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
+- [**Etapa 2:** Criar as Filas SQS](#etapa-2-criar-as-filas-sqs)
+  - [**2.1** Criar fila SQS Standard para o S3](#21-fila-standard-sqs-pedidos-json)
+  - [**2.3** Criar fila FIFO para armazena pedidos de forma individual](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
+  - [**2.2** Criar fila FIFO dlq para armazena pedidos que não puderam ser processados após o número máximo de tentativas.](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
+- [**Etapa 3:** Criar Tabela no DynamoDB para controle de indempotência de pedidos e arquivos JSON.](#etapa-3-criar-tabela-no-dynamodb)
+- [**Etapa 4:** Lambda de Extração de pedido e Controle de Duplicidade](#etapa-3-criar-tabela-no-dynamodb)
+- [**Etapa 5:** Criar o Triger para Lambda SQS](#dd)
 
 ---
 
@@ -33,17 +25,11 @@ Nesta atividade, você irá:
 - **Acesso ao console da AWS** via navegador web.
 
 
-### **Componentes da Arquitetura:**
-
-1. **Lambda de Extração e Controle de Duplicação:**
-   - Responsável por ler o arquivo JSON enviado ao S3.
-   - Faz o registro de arquivos processados no DynamoDB para evitar duplicações.
-   - Envia pedidos individuais para a fila SQS FIFO para processamento.
-
-2. **Lambda de Validação:**
-   - Lê os pedidos da SQS FIFO, valida os dados obrigatórios e verifica o status do pedido.
-   - Encaminha os pedidos válidos ao EventBridge, onde são roteados para filas SQS específicas de acordo com o status do pedido.
-   - Em caso de erro, envia os pedidos inválidos para uma fila DLQ FIFO e notifica via SNS.
+### Fluxo de Trabalho:
+- O Lambda é acionado quando a fila SQS padrão recebe uma notificação de evento S3.
+- O Lambda lê o arquivo do S3 e processa os pedidos.
+- Cada pedido é enviado para a fila SQS FIFO de destino.
+- O Lambda registra os pedidos no DynamoDB com detalhes básicos e evita duplicações.
 
 ---
 
