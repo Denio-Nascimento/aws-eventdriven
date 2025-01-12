@@ -11,10 +11,10 @@ A arquitetura proposta é altamente escalável e permite o uso de **Lambda Layer
 - [**Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
 - [**Etapa 2:** Criar as Filas SQS](#etapa-2-criar-as-filas-sqs)
   - [**2.1** Criar fila SQS Standard para o S3](#21-fila-standard-sqs-pedidos-json)
-  - [**2.3** Criar fila FIFO para armazena pedidos de forma individual](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
   - [**2.2** Criar fila FIFO dlq para armazena pedidos que não puderam ser processados após o número máximo de tentativas.](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
+  - [**2.3** Criar fila FIFO para armazena pedidos de forma individual](#23-fila-fifo-sqs-pedidos-validosfifo)
 - [**Etapa 3:** Criar Tabela no DynamoDB para controle de indempotência de pedidos e arquivos JSON.](#etapa-3-criar-tabela-no-dynamodb)
-- [**Etapa 4:** Lambda de Extração de pedido e Controle de Duplicidade](#etapa-3-criar-tabela-no-dynamodb)
+- [**Etapa 4:** Lambda de Extração de pedido e Controle de Duplicidade](#etapa-4-lambda-de-extração-de-pedido-e-controle-de-duplicidade)
 - [**Etapa 5:** Criar o Triger para Lambda SQS](#dd)
 
 ---
