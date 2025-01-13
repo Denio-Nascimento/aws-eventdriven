@@ -80,7 +80,44 @@ Esta fila é utilizada para armazenar a notificação de novos arquivos JSON car
 2. Clique em **Create queue**.
 3. Escolha **Standard Queue**.
 4. **Queue Name:** `sqs-pedidos-json`.
-5. Clique em **Create Queue**.
+5. Na seção *Access policy* clique em **Advanced**
+
+Cole o seguinte código, substituindo `<YOUR_REGION>` pela sua região (por exemplo, `us-east-1` para **N.Virginia** ou `us-east-2` para **Ohio**), `<BUCKET_NAME>` pelo nome do backup criado na etapa 1 ex: `translogistica-pedidos-seu-nome`  e `<YOUR_ACCOUNT_ID>` pelo ID da sua conta AWS (este pode ser encontrado no canto superior direito da console da AWS; clique no nome do usuário e o ID da conta aparecerá como 'Account ID: 123456789012'; é um número de 12 dígitos):
+```json
+ {
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "YOUR_ACCOUNT_ID"
+      },
+      "Action": [
+        "SQS:*"
+      ],
+      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-json"
+    },
+    {
+      "Sid": "AllowS3BucketToSendMessages",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "SQS:SendMessage",
+      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-json",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:s3:::BUCKET_NAME"
+        }
+      }
+    }
+  ]
+}
+```
+
+6. Clique em **Create Queue**.
+
+
 
 ### **2.3. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
 Esta fila FIFO armazena pedidos que não puderam ser processados após o número máximo de tentativas.
@@ -301,19 +338,14 @@ def should_process_order(order):
 
 ---
 
-6. Vincule a layer `order-validation-layer`.
-7. Adicione variáveis de ambiente:
-   - **`DYNAMO_TABLE_NAME`**: `OrdersTable`
-   - **`SQS_FIFO_URL`**: URL da fila FIFO.
 
-
-#### **Política IAM (JSON)**
+### 4.6. **Política IAM (JSON)**
 Adicione a seguinte política ao role da Lambda de Extração:
 
 1. No painel da função Lambda, clique em **Configuration** > **Permissions**.
-2. Clique no nome da **role** atribuída à função.
+2. Clique no nome da role **role name** atribuída à função. Que será parecido com `extract-and-send-orders-role-xxxxxx`
 3. Clique em **Add permissions** > **Create inline policy**.
-4. Selecione a aba **JSON** e cole a seguinte política com mínimos privilégios:
+4. Selecione a aba **JSON** e cole o seguinte código, substituindo `<YOUR_REGION>` pela sua região (por exemplo, `us-east-1` para **N.Virginia** ou `us-east-2` para **Ohio**) e `<YOUR_ACCOUNT_ID>` pelo ID da sua conta AWS (este pode ser encontrado no canto superior direito da console da AWS; clique no nome do usuário e o ID da conta aparecerá como 'Account ID: 123456789012'; é um número de 12 dígitos):
 
 ~~~json
 {
@@ -327,53 +359,58 @@ Adicione a seguinte política ao role da Lambda de Extração:
     {
       "Effect": "Allow",
       "Action": ["dynamodb:PutItem", "dynamodb:GetItem"],
-      "Resource": "arn:aws:dynamodb:REGIÃO:ID_DA_CONTA:table/OrdersTable"
+      "Resource": "arn:aws:dynamodb:YOUR_REGION:YOUR_ACCOUNT_ID:table/OrdersTable"
     },
     {
       "Effect": "Allow",
       "Action": "sqs:SendMessage",
-      "Resource": "arn:aws:sqs:REGIÃO:ID_DA_CONTA:sqs-pedidos-validos.fifo"
+      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-validos.fifo"
+    },
+		 {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+      ],
+      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-validos.fifo"
     }
   ]
 }
 ~~~
 
-#### **Política IAM (JSON)**
+5. Clique em **Next**.
+6. Em **Policy name** digite `Extractorders`
+7. Clique em **Create policy**.
 
-1. No painel da função Lambda, clique em **Configuration** > **Permissions**.
-2. Clique no nome da **role** atribuída à função.
-3. Clique em **Add permissions** > **Create inline policy**.
-4. Selecione a aba **JSON** e cole a seguinte política com mínimos privilégios:
-~~~json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "sqs:ReceiveMessage",
-      "Resource": "arn:aws:sqs:REGIÃO:ID_DA_CONTA:sqs-pedidos-validos.fifo"
-    },
-    {
-      "Effect": "Allow",
-      "Action": "events:PutEvents",
-      "Resource": "arn:aws:events:REGIÃO:ID_DA_CONTA:event-bus/event-bus-pedidos"
-    },
-    {
-      "Effect": "Allow",
-      "Action": "sns:Publish",
-      "Resource": "arn:aws:sns:REGIÃO:ID_DA_CONTA:sns-notificacoes-erros"
-    },
-    {
-      "Effect": "Allow",
-      "Action": "sqs:SendMessage",
-      "Resource": "arn:aws:sqs:REGIÃO:ID_DA_CONTA:sqs-pedidos-dlq.fifo"
-    }
-  ]
-}
-~~~
-
+**Nota:** Certifique-se de substituir `<YOUR_REGION>` e `<YOUR_ACCOUNT_ID>` pelos valores corretos.
 
 ---
+
+## **Etapa 5: Criar em S3 Notification**
+
+
+
+1. **Acessar o Amazon S3:**
+
+   - No menu de serviços, selecione **S3** (pode usar a barra de pesquisa).
+   - **AWS Region:** Certifique-se de estar na região em que pretende trabalhar. (por exemplo, **us-east-1**).
+   - No menu da esquerda Clique em **General purpose buckets**
+   - Na lista de buckets, clique no nome do bucket que você criou na **etapa 1** ex: `translogistica-pedidos-seu-nome`
+   - No painel de detalhes do bucket, selecione a aba "Properties" (Propriedades).
+
+2. **Criar uma Notificação de Evento**
+
+   - Role para baixo até a seção "Event Notifications".
+   - Clique em "Create event notification".
+   - Em **Event name** digite `pedidos`
+   - Em **Prefix** digite  `novos-pedidos/`
+   - Em **Suffix** digite `.json`
+   - Selecione a opção **All object create events**
+   - Descendo a tela em **Destination** selecione **SQS queue**
+   - Em **SQS queue** selecione `sqs-pedidos-json`
+   - 
+
 
 ## **Etapa 9: Teste do Fluxo Completo**
 
