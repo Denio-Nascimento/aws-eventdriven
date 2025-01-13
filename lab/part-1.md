@@ -286,7 +286,7 @@ def should_process_order(order):
 2. Clique em **Edit** e depois em **Add environment variable**:
    - **Key**: `DYNAMO_TABLE_NAME`
    - **Value**: `OrdersTable` (ou o nome da tabela do DynamoDB)
-3. Repita para:
+3. Clique novamento em **Add environment variable**:
    - **Key**: `SQS_FIFO_URL`
    - **Value**: A URL do SQS **sqs-pedidos-validos.fifo** (por exemplo, `(https://sqs.us-east-1.amazonaws.com/<account_id>/sqs-pedidos-validos.fifo)`) para pegar a URL acesse o AWS SQS Console, clique no nome da fila **sqs-pedidos-validos.fifo**, e a URL estará visível nos detalhes da fila.
 4. Clique em **Save**.
