@@ -344,7 +344,7 @@ Adicione a seguinte política ao role da Lambda de Extração:
 1. No painel da função Lambda, clique em **Configuration** > **Permissions**.
 2. Clique no nome da role **role name** atribuída à função. Que será parecido com `extract-and-send-orders-role-xxxxxx`
 3. Clique em **Add permissions** > **Create inline policy**.
-4. Selecione a aba **JSON** e cole o seguinte código, substituindo `<YOUR_REGION>` pela sua região (por exemplo, `us-east-1` para **N.Virginia** ou `us-east-2` para **Ohio**) e `<YOUR_ACCOUNT_ID>` pelo ID da sua conta AWS (este pode ser encontrado no canto superior direito da console da AWS; clique no nome do usuário e o ID da conta aparecerá como 'Account ID: 123456789012'; é um número de 12 dígitos):
+4. Selecione a aba **JSON** e cole o seguinte código, substituindo `<YOUR_REGION>` pela sua região (por exemplo, `us-east-1` para **N.Virginia** ou `us-east-2` para **Ohio**), `<BUCKET_NAME>` pelo nome do backup criado na etapa 1 ex: `translogistica-pedidos-seu-nome`  e  `<YOUR_ACCOUNT_ID>` pelo ID da sua conta AWS (este pode ser encontrado no canto superior direito da console da AWS; clique no nome do usuário e o ID da conta aparecerá como 'Account ID: 123456789012'; é um número de 12 dígitos):
 
 ~~~json
 {
@@ -353,11 +353,11 @@ Adicione a seguinte política ao role da Lambda de Extração:
     {
       "Effect": "Allow",
       "Action": ["s3:GetObject"],
-      "Resource": "arn:aws:s3:::SEU_BUCKET/*"
+      "Resource": "arn:aws:s3:::BUCKET_NAME/*"
     },
     {
       "Effect": "Allow",
-      "Action": ["dynamodb:PutItem", "dynamodb:GetItem"],
+      "Action": ["dynamodb:PutItem", "dynamodb:GetItem", "dynamodb:BatchWriteItem"],
       "Resource": "arn:aws:dynamodb:YOUR_REGION:YOUR_ACCOUNT_ID:table/OrdersTable"
     },
     {
