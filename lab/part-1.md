@@ -161,7 +161,6 @@ Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
 
 ---
 
-
 ## **Etapa 4: Lambda de Extração de pedido e Controle de Duplicidade**
 Esta função lê o arquivo JSON do S3, registra os pedidos no DynamoDB para evitar duplicação e envia os pedidos para a fila FIFO.
 
@@ -373,17 +372,26 @@ Adicione a seguinte política ao role da Lambda de Extração:
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
       ],
-      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-validos.fifo"
+      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-json"
     }
   ]
 }
 ~~~
+
 
 5. Clique em **Next**.
 6. Em **Policy name** digite `Extractorders`
 7. Clique em **Create policy**.
 
 **Nota:** Certifique-se de substituir `<YOUR_REGION>` e `<YOUR_ACCOUNT_ID>` pelos valores corretos.
+
+
+### 4.6. **Adicionar um trigger para A lambda**
+
+1. Na parte de cima clique em **+ Add trigger**
+2. Em **Trigger configuration** Selecione `SQS`
+3. Em **SQS queue** selecione `sqs-pedidos-json`
+4. Decendo a tela até o final clique em `Add`
 
 ---
 
@@ -412,13 +420,41 @@ Adicione a seguinte política ao role da Lambda de Extração:
    - 
 
 
-## **Etapa 9: Teste do Fluxo Completo**
+## **Etapa 6: Teste do Fluxo Completo**
+Nesta etapa, você irá testar todo o fluxo desde o envio de arquivos JSON ao bucket S3 até o processamento pelo Lambda, inserção no DynamoDB e envio para a fila SQS FIFO.
 
-1. Envie um arquivo JSON para o bucket S3.
-2. Verifique os logs no **CloudWatch**.
-3. Confira as mensagens nas fila FIFO.
+### **6.1. Fazer o Download dos Arquivos de Teste**
 
----
+1. Acesse o repositório do GitHub com os arquivos de pedidos em formato .json.
+2. Faça o download individual dos arquivos .json diretamente para a sua area de trabalho
 
-## **Conclusão**
-Essa atualização melhora a resiliência e modularidade do processamento de pedidos, com explicações detalhadas e um fluxo bem estruturado que separa cada responsabilidade de forma clara.
+## **6.2. Enviar Arquivo(s) para o Bucket S3**
+
+1. Acesse o Amazon S3 no console da AWS.
+2. No menu de serviços, clique em S3.
+3. Na lista de buckets, clique no nome do bucket criado anteriormente (translogistica-pedidos-seu-nome).
+4. Clique na pasta novos-pedidos/.
+5. Clique em Upload:
+6. Clique em Add files e selecione um ou mais arquivos .json de pedidos baixados.
+7. Clique em Upload.
+
+## **6.3. Verificar o Processamento**
+
+1. Após o upload, o evento deve acionar automaticamente a função Lambda.
+2. Acesse o Amazon CloudWatch Logs:
+3. No console AWS, procure por CloudWatch.
+4. Clique em Logs e selecione o log group da função Lambda extract-and-send-orders.
+5. Verifique os logs para confirmar o processamento dos pedidos.
+
+## **6.4. Verificar Inserção no DynamoDB**
+
+1. Acesse o DynamoDB no console da AWS.
+2. Clique em Tables e selecione a tabela OrdersTable.
+3. Clique em Explore table items e verifique se os pedidos foram inseridos com os 4. detalhes corretos (como order_id, order_status, e ProcessedAt).
+
+## **6.5. Verificar Mensagens na Fila FIFO**
+
+1. Acesse o Amazon SQS no console da AWS.
+2. Clique na fila sqs-pedidos-validos.fifo.
+3. Clique em Send and receive messages.
+4. Clique em Poll for messages para verificar se os pedidos estão presentes na fila.
