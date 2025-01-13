@@ -165,26 +165,29 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
       ],
-      "Resource": "arn:aws:sqs:<YOUR_REGION>:<YOUR_ACCOUNT_ID>:sqs-pedidos-validos.fifo"
+      "Resource": "arn:aws:sqs:YOUR_REGION:YOUR_ACCOUNT_ID:sqs-pedidos-validos.fifo"
     }
   ]
 }
 ```
+*(Novamente, ajuste Região e o id da conta.)*
+
    - Clique em **Next**.
 
    - Em **Policy name** digite `LambdaSQSPolicy`
 
    - Clique em **Create policy**.
 
-**Nota:** Certifique-se de substituir `<YOUR_REGION>` e `<YOUR_ACCOUNT_ID>` pelos valores corretos.
 
 ### 2.3. Adicionar Política para EventBridge
 
-   - Incluia mais uma Politica inline
+   - Incluia mais uma Política
      
    - Na página da role IAM, clique novamente em **Add permissions**.
      
    - Escolha **Create inline policy**.
+     
+   - Selecione a aba **JSON** e cole o seguinte código
      
 ```json
 {
@@ -193,14 +196,30 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
     {
       "Effect": "Allow",
       "Action": "events:PutEvents",
-      "Resource": "arn:aws:events:<YOUR_REGION>:<YOUR_ACCOUNT_ID>:event-bus/event-bus-pedidos"
+      "Resource": "arn:aws:events:YOUR_REGION:YOUR_ACCOUNT_ID:event-bus/event-bus-pedidos"
     }
   ]
 }
 ```
 *(Novamente, ajuste Região, Conta e nome do Event Bus.)*
 
+   - Clique em **Next**.
+
+   - Em **Policy name** digite `LambdaEventBridgePolicy`
+
+   - Clique em **Create policy**.
+
+
 ### 2.4. Adicionar Política para SNS
+
+   - Incluia mais uma Política
+     
+   - Na página da role IAM, clique novamente em **Add permissions**.
+     
+   - Escolha **Create inline policy**.
+     
+   - Selecione a aba **JSON** e cole o seguinte código
+
 ```json
 {
   "Version": "2012-10-17",
@@ -213,42 +232,122 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
   ]
 }
 ```
-Clique em **Review**, dê um nome como `LambdaSendEventBridgeAndSNSPolicy`, e crie.
+Clique em **Review**, dê um nome como `LambdaSNSPolicy`, e crie.
 
 ---
 
 ## **Etapa 3: Criar o SNS para Notificações**
 
 ### 3.1. Criar o Tópico SNS
-1. Vá em **Amazon SNS** > **Topics** > **Create topic**.
-2. **Type:** Standard (ou FIFO, dependendo da sua necessidade).
-3. **Name:** `sns-notificacoes-erros`
-4. Clique em **Create topic**.
+
+
+1. Acesse o Amazon SNS:
+   - No console da AWS, vá para Services > Simple Notification Service (SNS).
+   - Clique em Topics.
+     
+2. Criar um Tópico:
+
+   - Clique em Create topic.
+   - Type: Selecione Standard.
+   - Name: Digite `sns-notificacoes-erros`
+   - Deixe as outras configurações como padrão.
+   - Clique em **Create topic**.
 
 ### 3.2. Criar uma Assinatura (Opcional)
-1. Clique em **Create subscription**.
-2. Em **Protocol**, escolha **Email**.
-3. Em **Endpoint**, digite seu email.
-4. Clique em **Create subscription**.
-5. Confirme o email que receber.
+Para receber notificações por e-mail ou SMS, você pode criar uma assinatura no tópico SNS:
+
+1. Criar Subscription:
+   - No painel do tópico sns-notificacoes-erros, clique em **Create subscription**.
+
+2. Configurar a Assinatura:
+   - Protocol: Selecione o método de entrega desejado:
+      - Email: para notificações via e-mail.
+      - SMS: para notificações via mensagem de texto.
+      - HTTP/HTTPS: para envio de notificações para uma URL (caso seu sistema aceite requisições HTTP).
+   - Endpoint: Digite o endereço de e-mail, número de telefone, ou URL de endpoint.
+     
+3. Confirmar a Assinatura:
+   - Se você selecionou Email, verifique sua caixa de entrada.
+   - Clique no link de confirmação enviado pelo Amazon SNS para ativar a assinatura.
 
 ---
 
-## **Etapa 4: Criar o EventBridge Bus e Regras**
+Exemplo de Uso no Código Lambda
+   - O ARN do tópico SNS será necessário na variável de ambiente SNS_TOPIC_ARN.
+   - O ARN do tópico SNS está localizado nos detalhes do tópico, no formato:
+   ```
+   arn:aws:sns:us-east-1:<YOUR_ACCOUNT_ID>:sns-notificacoes-erros
+   ```
 
-### 4.1. Criar um Event Bus
+## **Etapa 4: Criar Filas SQS de Destino e DLQs**
+Cada tipo de status do pedido precisa de sua **fila FIFO** que será o destino para as rotas do EventBridge. Também criamos **DLQs** para cada fila. Abaixo, um exemplo para a fila Pendente:
+
+### **4.1. Criar a Fila SQS Dead Letter Queue (DLQ)**
+
+1. **Acessar o Amazon SQS:**
+   - No menu de serviços, selecione **SQS** (ou utilize a barra de pesquisa).
+
+2. **Criar uma nova fila:**
+   - Clique em **Create queue**.
+   - Escolha **FIFO Queue**.
+
+3. **Configurações da fila:**
+   - **Queue Name:** `sqs-pedido-pendente-dlq.fifo`
+   - **Enable Content-Based Deduplication:** marque esta opção.
+
+4. **Finalizar a criação:**
+   - Clique em **Create Queue**.
+
+### **4.2. Criar a Fila SQS e associar a (DLQ)**
+
+1. **Volta para a tela inicial do SQS**
+   - No menu lateral esquerdo, clique em **Queues** (se não tiver aparente clique no icone com trez traços no canto esquerdo superior).
+
+1. **Criar uma nova fila principal:**
+   - No painel do Amazon SQS, clique em **Create queue**.
+   - Escolha **FIFO**.
+
+2. **Configurações da fila principal:**
+   - **Queue Name:** `sqs-pedido-pendente.fifo`
+   - **Enable Content-Based Deduplication:** marque esta opção.
+
+3. **Configurar a Dead Letter Queue:**
+   - Na seção **Dead-letter queue**, selecione **Enabled**.
+   - **Dead-letter queue:** selecione `sqs-pedido-pendente-dlq.fifo`.
+   - **Maximum Receives:** defina 3 (ou outro valor conforme sua necessidade).
+
+4. **Finalizar a criação:**
+   - Clique em **Create Queue**.
+
+### **4.3. Criar os restantes das Filas**
+8. Repita os passos 4.1 e 4.2 para as filas:
+   - `sqs-pedido-alterado.fifo` / `sqs-pedido-alterado-dlq.fifo`
+   - `sqs-pedido-cancelado.fifo` / `sqs-pedido-cancelado-dlq.fifo`
+
+---
+
+## **Etapa 5: Criar o EventBridge Bus e Regras**
+
+### 5.1. Criar um Event Bus
 1. No console da AWS, vá em **Amazon EventBridge**.
 2. Em **Event buses** > **Create event bus**.
 3. **Name:** `event-bus-pedidos`.
 4. Clique em **Create**.
 
-### 4.2. Criar 3 Regras de Roteamento
+### 5.2. Criar 3 Regras de Roteamento
 Precisamos rotear de acordo com `order_status`, conforme o código do Lambda.
 
-#### 4.2.1. Regra Pendente
-1. **Name:** `regra-pedido-pendente`
-2. **Event Bus:** `event-bus-pedidos`
-3. **Event pattern (JSON)**:
+#### 5.2.1. Regra Pendente
+1. No menu da esquerda clique em **Rules**
+2. clique em **Create rule**
+
+3. **Name:** `regra-pedido-pendente`
+4. **Event Bus:** `event-bus-pedidos`
+5. Clique em **Next**
+
+6. Em **Event source** Selecione **Other**
+7. Em **Creation method** Selecione **Custom pattern (JSON editor)**
+8. Em **Event pattern** copie a regra abaixo
    ```json
    {
      "source": ["socket-entregas.orders"],
@@ -258,11 +357,19 @@ Precisamos rotear de acordo com `order_status`, conforme o código do Lambda.
      }
    }
    ```
-4. **Target:** SQS — Selecione a fila `sqs-pedido-pendente.fifo`
+9. Clique em **Next** 
+11. Em **Target types** selecione **AWS service**
+12. Em **Select a target:** Selecione **SQS queue**
+13. Selecione a fila `sqs-pedido-pendente.fifo`
 5. **MessageGroupId:** `orders-group` (obrigatório para FIFO)
-6. **Create rule**.
+6. Clique me **Next**
+7. Na seção *Configure tags* apenas clique em **Next** novamento
+8. **Create rule**.
+
 
 #### 4.2.2. Regra Alterar Pedido
+Repita o procedimento para a regra **Alterar Pedido** conforme as informações abaixo
+
 - **Name:** `regra-pedido-alterar`
 - **Event pattern (JSON)**:
   ```json
@@ -278,6 +385,8 @@ Precisamos rotear de acordo com `order_status`, conforme o código do Lambda.
 - **MessageGroupId:** `orders-group`
 
 #### 4.2.3. Regra Cancela Pedido
+Repita o procedimento para a regra **Cancela Pedido** conforme as informações abaixo
+
 - **Name:** `regra-pedido-cancela`
 - **Event pattern (JSON)**:
   ```json
@@ -294,22 +403,6 @@ Precisamos rotear de acordo com `order_status`, conforme o código do Lambda.
 
 ---
 
-## **Etapa 5: Criar Filas SQS de Destino e DLQs**
-
-Cada status precisa de sua **fila FIFO**. Se quisermos alta confiabilidade, também criamos **DLQs** para cada fila. Abaixo, um exemplo para a fila Pendente:
-
-1. Vá em **Amazon SQS** > **Create queue**.
-2. **FIFO Queue**.
-3. **Queue name:** `sqs-pedido-pendente.fifo`
-4. Marque **Enable high throughput FIFO** se desejar.
-5. **Content-based deduplication:** Ativado.
-6. **Dead-letter queue:** selecione `sqs-pedido-pendente-dlq.fifo` (também FIFO).
-7. **MaxReceiveCount:** 3.
-8. Repita o processo para:
-   - `sqs-pedido-alterado.fifo` / `sqs-pedido-alterado-dlq.fifo`
-   - `sqs-pedido-cancelado.fifo` / `sqs-pedido-cancelado-dlq.fifo`
-
----
 
 ## **Etapa 6: Teste Manual no Console (Lambda)**
 
