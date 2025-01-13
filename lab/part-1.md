@@ -68,26 +68,35 @@ Na quarta e última parte, será desenvolvido um backend com três funções Lam
 
 ## **Etapa 2: Criar as Filas SQS**
 
-### **2.1. Fila Standard: `sqs-pedidos-json`**
+### **2.1. Acessar o Amazon S3:**
+
+   - Faça login na console da AWS.
+   - No menu de serviços, selecione **SQS** (pode usar a barra de pesquisa).
+   - **AWS Region:** Certifique-se de estar na região em que pretende trabalhar. (por exemplo, **us-east-1**).
+
+### **2.2. Fila Standard: `sqs-pedidos-json`**
 Esta fila é utilizada para armazenar a notificação de novos arquivos JSON carregados no bucket S3.
 
-1. Acesse o console da **AWS** e selecione **SQS**.
 2. Clique em **Create queue**.
 3. Escolha **Standard Queue**.
 4. **Queue Name:** `sqs-pedidos-json`.
 5. Clique em **Create Queue**.
 
-### **2.2. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
+### **2.3. Fila DLQ FIFO: `sqs-pedidos-dlq.fifo`**
 Esta fila FIFO armazena pedidos que não puderam ser processados após o número máximo de tentativas.
 
-1. Crie uma fila **FIFO** com o nome `sqs-pedidos-dlq.fifo`.
-2. Habilite **Content-based deduplication**.
+1. Clique em **Queues** no menu da esquerda. (obs: caso não esteja aparecendo o nome clica no icone *com 3 traços* no canto superior esquerdo)
+2. 2. Clique em **Create queue**.
+3. Escolha **FIFO** 
+4. **Queue Name:** `sqs-pedidos-dlq.fifo`.
+5. Habilite **Content-based deduplication**.
 
 ### **2.3. Fila FIFO: `sqs-pedidos-validos.fifo`**
 Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
 
-1. Clique em **Create queue**.
-2. Escolha **FIFO Queue**.
+1. Clique em **Queues** no menu da esquerda.
+2. Clique em **Create queue**.
+3. Escolha **FIFO**.
 3. **Queue Name:** `sqs-pedidos-validos.fifo`.
 4. Marque **Content-based deduplication** para evitar envios duplicados.
 5. Configure uma DLQ FIFO para tratar mensagens que falham:
