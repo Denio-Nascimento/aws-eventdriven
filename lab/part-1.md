@@ -128,18 +128,22 @@ Esta fila FIFO recebe pedidos individuais extraídos do arquivo JSON.
 ## **Etapa 4: Lambda de Extração de pedido e Controle de Duplicidade**
 Esta função lê o arquivo JSON do S3, registra os pedidos no DynamoDB para evitar duplicação e envia os pedidos para a fila FIFO.
 
-#### **Passos:**
-1. Acesse **AWS Lambda** > **Create function**.
-2. **Function name:** `extract-and-send-lambda`.
-3. **Runtime:** `Python 3.13`.
-4. **Timeout:** 30 minutos.
-5. **Memory:** 256 MB.
-6. Vincule a layer `order-validation-layer`.
-7. Adicione variáveis de ambiente:
-   - **`DYNAMO_TABLE_NAME`**: `OrdersTable`
-   - **`SQS_FIFO_URL`**: URL da fila FIFO.
+### 4.1. Acessar o AWS Lambda
+1. No menu de serviços da AWS, procure por **Lambda**.
+2. Clique em **Create function**.
 
-#### **Código:**
+### 4.2. Criar a Função
+1. **Function name:** `extract-and-send-orders`
+2. **Runtime:** escolha **Python 3.13** (ou versão mais recente disponível).
+3. Clique em **Create function**.
+
+### 4.3. Inserir o Código-Fonte
+Na página da função, role até **Code source**:
+
+1. Apague o conteúdo padrão do editor.
+2. Cole o seguinte código:
+
+**Código python:**
 ~~~python
 import boto3, json, os, logging
 from datetime import datetime
@@ -274,6 +278,34 @@ def should_process_order(order):
         return not exists  # Só processa se não existir
     return False
 ~~~
+
+3. Clique em **Deploy** para salvar as alterações.
+
+### 4.4. Adicionar Variáveis de Ambiente
+1. No menu superior clique em **Configuration** e após, no menu da esquerda clique em **Environment variables**.
+2. Clique em **Edit** e depois em **Add environment variable**:
+   - **Key**: `DYNAMO_TABLE_NAME`
+   - **Value**: `OrdersTable` (ou o nome da tabela do DynamoDB)
+3. Repita para:
+   - **Key**: `SQS_FIFO_URL`
+   - **Value**: A URL do SQS **sqs-pedidos-validos.fifo** (por exemplo, `(https://sqs.us-east-1.amazonaws.com/<account_id>/sqs-pedidos-validos.fifo)`) para pegar a URL acesse o AWS SQS Console, clique no nome da fila **sqs-pedidos-validos.fifo**, e a URL estará visível nos detalhes da fila.
+4. Clique em **Save**.
+
+### 4.5. Ajustar Timeout e Memória
+
+1. Ainda em **Configuration** > **General configuration**.
+3. Clique em **Edit**
+4. Ajuste **Memory** para `256` MB.
+5. Ajuste **Timeout** para `0` minutos e `30` segundos 
+6. Clique em **Save**.
+
+---
+
+6. Vincule a layer `order-validation-layer`.
+7. Adicione variáveis de ambiente:
+   - **`DYNAMO_TABLE_NAME`**: `OrdersTable`
+   - **`SQS_FIFO_URL`**: URL da fila FIFO.
+
 
 #### **Política IAM (JSON)**
 Adicione a seguinte política ao role da Lambda de Extração:
