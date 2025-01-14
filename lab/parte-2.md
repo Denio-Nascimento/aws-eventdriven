@@ -2,22 +2,22 @@
 
 Este laboratório é a **segunda parte** do fluxo de processamento de pedidos. Supondo que já exista uma Lambda anterior que insere pedidos em uma fila SQS FIFO (chamada `sqs-pedidos-validos.fifo`), agora vamos:
 
-![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_1.png)
+![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_2.png)
 
 ## **O que Você Irá Aprender nesta atividade**
 
-- [**Etapa 1:** Criar a Layer de Validação](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
-- [**Etapa 2:** Criar a Lambda de Validação e Envio](#etapa-2-criar-as-filas-sqs)
-- [**Etapa 3:** Permissões IAM da Lambda.](#etapa-4-lambda-de-extração-de-pedido-e-controle-de-duplicidade)
-- [**Etapa 4:** Criar o SNS para Notificações.](#etapa-4-lambda-de-extração-de-pedido-e-controle-de-duplicidade)
-- [**Etapa 5:** Criar Filas SQS de Destino e DLQs](#etapa-5-criar-em-s3-notification)
-  - [**5.1** Criar a Fila SQS Dead Letter Queue (DLQ)](#21-fila-standard-sqs-pedidos-json)
-  - [**5.2** Criar a Fila SQS e associar a (DLQ).](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
-- [**Etapa 6:** Criar o EventBridge Bus e Regras.](#etapa-3-criar-tabela-no-dynamodb)
-  - [**6.1** Criar um Event Bus)](#21-fila-standard-sqs-pedidos-json)
-  - [**6.2** Criar as Regras de Roteamento.](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
-- [**Etapa 7:** Teste Manual no Console (Lambda)](#etapa-5-criar-em-s3-notification)
-- [**Etapa 8:** Validar o Fluxo Completo](#etapa-6-teste-do-fluxo-completo)
+- [**Etapa 1:** Criar a Layer de Validação](#etapa-1-criar-a-layer-de-valida%C3%A7%C3%A3o).
+- [**Etapa 2:** Criar a Lambda de Validação e Envio](#etapa-2-criar-a-lambda-de-valida%C3%A7%C3%A3o-e-envio)
+- [**Etapa 3:** Permissões IAM da Lambda.](#etapa-3-permiss%C3%B5es-iam-da-lambda)
+- [**Etapa 4:** Criar o SNS para Notificações.](#etapa-4-criar-o-sns-para-notifica%C3%A7%C3%B5es)
+- [**Etapa 5:** Criar Filas SQS de Destino e DLQs](#etapa-5-criar-filas-sqs-de-destino-e-dlqs)
+  - [**5.1** Criar a Fila SQS Dead Letter Queue (DLQ)](51-criar-a-fila-sqs-dead-letter-queue-dlq)
+  - [**5.2** Criar a Fila SQS e associar a (DLQ).](52-criar-a-fila-sqs-e-associar-a-dlq)
+- [**Etapa 6:** Criar o EventBridge Bus e Regras.](#etapa-6-criar-o-eventbridge-bus-e-regras)
+  - [**6.1** Criar um Event Bus)](#61-criar-um-event-bus)
+  - [**6.2** Criar as Regras de Roteamento.](#62-criar-3-regras-de-roteamento)
+- [**Etapa 7:** Teste Manual no Console (Lambda)](#etapa-7-teste-manual-no-console-lambda)
+- [**Etapa 8:** Validar o Fluxo Completo](#etapa-8-validar-o-fluxo-completo)
 
 ---
 
@@ -383,7 +383,7 @@ Cada tipo de status do pedido precisa de sua **fila FIFO** que será o destino p
    - Clique em **Create Queue**.
 
 ### **5.3. Criar os restantes das Filas**
-8. Repita os passos 4.1 e 4.2 para as filas:
+8. Repita os passos 5.1 e 5.2 para as filas:
    - `sqs-pedido-alterado.fifo` / `sqs-pedido-alterado-dlq.fifo`
    - `sqs-pedido-cancelado.fifo` / `sqs-pedido-cancelado-dlq.fifo`
 
