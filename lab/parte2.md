@@ -45,8 +45,11 @@ zip -r validation_layer.zip python/
 ~~~
 
 ### **1.2. Criar o Layer**
-3. Acesse **AWS Lambda > Layers** > **Create layer**.
-4. Faça upload do arquivo ZIP, nomeie como `order-validation-layer` e selecione `Python 3.13`.
+1. Acesse **AWS Lambda > Layers** > **Create layer**.
+2. Em **Name** digite `order-validation-layer`
+4. Clique em upload e selecine o arquivo `python.zip`
+5. Em **Compatible runtimes** selecione `Python 3.13`.
+6. Clique em **Create**
 
 ---
 
@@ -160,10 +163,11 @@ def send_to_sns_alert(order, message):
 
 ### 2.6. Configurar Layers
 
-1. Ainda no menu **Code**
+1. Clique em **Code** (menu horizontal)
 2. No final da tela, na seção *Layers* clique em **Add layer**
 3. Selecione **Custom layers**
-4. 
+4. Selecione **order-validation-layer**
+5. Version **1** ou a mais recente
 ---
 
 ## **Etapa 3: Permissões IAM da Lambda**
