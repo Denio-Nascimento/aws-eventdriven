@@ -168,6 +168,15 @@ def send_to_sns_alert(order, message):
 3. Selecione **Custom layers**
 4. Selecione **order-validation-layer**
 5. Version **1** ou a mais recente
+
+   
+### 3.7. **Adicionar um trigger para A lambda**
+
+1. Na parte de cima clique em **+ Add trigger**
+2. Em **Trigger configuration** Selecione `SQS`
+3. Em **SQS queue** selecione `sqs-pedidos-validos.fifo`
+4. Decendo a tela até o final clique em `Add`
+
 ---
 
 ## **Etapa 3: Permissões IAM da Lambda**
