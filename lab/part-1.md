@@ -4,6 +4,8 @@ A primeira parte (que se trata desse arquivo) ensina a desenvolver uma função 
 
 ---
 
+![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_1.png)
+
 ## **O que Você Irá Aprender nesta atividade**
 
 - [**Etapa 1:** Criar o Bucket S3 e o Prefixo para os Pedidos](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
@@ -16,7 +18,6 @@ A primeira parte (que se trata desse arquivo) ensina a desenvolver uma função 
 - [**Etapa 5:** Criar o Triger para Lambda SQS](#etapa-5-criar-em-s3-notification)
 - [**Etapa 6:** Testes completo do fluxo](#etapa-6-teste-do-fluxo-completo)
 
-![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_1.png)
 ---
 
 ### **Pré-requisitos**
