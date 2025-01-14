@@ -21,18 +21,47 @@ Este laboratório é a **segunda parte** do fluxo de processamento de pedidos. S
 
 ---
 
-## **Etapa 1: Criar a Lambda de Validação e Envio**
+## **Etapa 1: Criar a Layer de Validação**
+E Layer é uma camada de código que pode ser reaproveitado para outras Lambdas
+OBS: abaixa está o passo a passo de como criar o arquivo para usar no Layer, porem temos o arquivo pronto no repositório chamodo **python.zip**, faça o download e vá direto ao tópico **1.2. Criar o Layer**.
 
-### 1.1. Acessar o AWS Lambda
+### **1.1. Código da Layer (`order_validation_layer.py`)**
+Esta layer contém a função responsável por validar os campos obrigatórios do pedido.
+
+1. Copie o código abaixo e crie um arquivo com o nome `order_validation_layer.py`
+~~~python
+def validate_order(order):
+    required_fields = ["order_id", "customer", "items", "payment", "company", "order_status"]
+    for field in required_fields:
+        if field not in order:
+            return False
+    return order["order_status"] in ["PedidoNovo", "PedidoAlterado", "PedidoCancelado"]
+~~~
+
+2. Crie a pasta `python` e mova `order_validation_layer.py` para dentro.
+3. Zip a pasta `python`com o arquivo `order_validation_layer.py` :
+~~~bash
+zip -r validation_layer.zip python/
+~~~
+
+### **1.2. Criar o Layer**
+3. Acesse **AWS Lambda > Layers** > **Create layer**.
+4. Faça upload do arquivo ZIP, nomeie como `order-validation-layer` e selecione `Python 3.13`.
+
+---
+
+## **Etapa 2 Criar a Lambda de Validação e Envio**
+
+### 2.1. Acessar o AWS Lambda
 1. No menu de serviços da AWS, procure por **Lambda**.
 2. Clique em **Create function**.
 
-### 1.2. Criar a Função
+### 2.2. Criar a Função
 1. **Function name:** `validation-and-send-lambda`
 2. **Runtime:** escolha **Python 3.13** (ou versão mais recente disponível).
 3. Clique em **Create function**.
 
-### 1.3. Inserir o Código-Fonte
+### 2.3. Inserir o Código-Fonte
 Na página da função, role até **Code source**:
 
 1. Apague o conteúdo padrão do editor.
@@ -114,7 +143,7 @@ def send_to_sns_alert(order, message):
 
 3. Clique em **Deploy** para salvar as alterações.
 
-### 1.4. Adicionar Variáveis de Ambiente
+### 2.4. Adicionar Variáveis de Ambiente
 1. Vá em **Configuration** > **Environment variables**.
 2. Clique em **Edit** e depois em **Add environment variable**:
    - **Key**: `EVENT_BUS_NAME`
@@ -124,16 +153,22 @@ def send_to_sns_alert(order, message):
    - **Value**: ARN do seu tópico SNS (por exemplo, `arn:aws:sns:us-east-1:123456789012:sns-notificacoes-erros`)
 4. Clique em **Save**.
 
-### 1.5. Ajustar Timeout (Opcional)
+### 2.5. Ajustar Timeout (Opcional)
 1. Ainda em **Configuration** > **General configuration**.
 2. Clique em **Edit** e ajuste **Timeout** (ex: 30 s).
 3. Clique em **Save**.
 
+### 2.6. Configurar Layers
+
+1. Ainda no menu **Code**
+2. No final da tela, na seção *Layers* clique em **Add layer**
+3. Selecione **Custom layers**
+4. 
 ---
 
-## **Etapa 2: Permissões IAM da Lambda**
+## **Etapa 3: Permissões IAM da Lambda**
 
-### 2.1. Acessar a Role
+### 3.1. Acessar a Role
 1. Na página da função Lambda, vá em **Configuration** > **Permissions**.
 2. Clique no nome da role (algo como `validation-and-send-lambda-role-xyz`), abrindo o console do IAM.
    
@@ -143,7 +178,7 @@ def send_to_sns_alert(order, message):
 
      - Escolha **Create inline policy**.
 
-### 2.2. Adicionar Política Inline para SQS (invocada)
+### 3.2. Adicionar Política Inline para SQS (invocada)
 Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa de permissão pass-through do SQS. Se for **SQS como trigger**, a permissão principal é dada pelo serviço. Porém, caso seja necessário explicitamente (por exemplo, a Lambda possa deletar mensagens, etc.)
 
    - Na página da role IAM, clique novamente em **Add permissions**.
@@ -179,7 +214,7 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
    - Clique em **Create policy**.
 
 
-### 2.3. Adicionar Política para EventBridge
+### 3.3. Adicionar Política para EventBridge
 
    - Incluia mais uma Política
      
@@ -210,7 +245,7 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
    - Clique em **Create policy**.
 
 
-### 2.4. Adicionar Política para SNS
+### 3.4. Adicionar Política para SNS
 
    - Incluia mais uma Política
      
@@ -236,9 +271,9 @@ Clique em **Review**, dê um nome como `LambdaSNSPolicy`, e crie.
 
 ---
 
-## **Etapa 3: Criar o SNS para Notificações**
+## **Etapa 4: Criar o SNS para Notificações**
 
-### 3.1. Criar o Tópico SNS
+### 4.1. Criar o Tópico SNS
 
 
 1. Acesse o Amazon SNS:
@@ -253,7 +288,7 @@ Clique em **Review**, dê um nome como `LambdaSNSPolicy`, e crie.
    - Deixe as outras configurações como padrão.
    - Clique em **Create topic**.
 
-### 3.2. Criar uma Assinatura (Opcional)
+### 4.2. Criar uma Assinatura (Opcional)
 Para receber notificações por e-mail ou SMS, você pode criar uma assinatura no tópico SNS:
 
 1. Criar Subscription:
@@ -279,10 +314,10 @@ Exemplo de Uso no Código Lambda
    arn:aws:sns:us-east-1:<YOUR_ACCOUNT_ID>:sns-notificacoes-erros
    ```
 
-## **Etapa 4: Criar Filas SQS de Destino e DLQs**
+## **Etapa 5: Criar Filas SQS de Destino e DLQs**
 Cada tipo de status do pedido precisa de sua **fila FIFO** que será o destino para as rotas do EventBridge. Também criamos **DLQs** para cada fila. Abaixo, um exemplo para a fila Pendente:
 
-### **4.1. Criar a Fila SQS Dead Letter Queue (DLQ)**
+### **5.1. Criar a Fila SQS Dead Letter Queue (DLQ)**
 
 1. **Acessar o Amazon SQS:**
    - No menu de serviços, selecione **SQS** (ou utilize a barra de pesquisa).
@@ -298,7 +333,7 @@ Cada tipo de status do pedido precisa de sua **fila FIFO** que será o destino p
 4. **Finalizar a criação:**
    - Clique em **Create Queue**.
 
-### **4.2. Criar a Fila SQS e associar a (DLQ)**
+### **5.2. Criar a Fila SQS e associar a (DLQ)**
 
 1. **Volta para a tela inicial do SQS**
    - No menu lateral esquerdo, clique em **Queues** (se não tiver aparente clique no icone com trez traços no canto esquerdo superior).
@@ -319,25 +354,25 @@ Cada tipo de status do pedido precisa de sua **fila FIFO** que será o destino p
 4. **Finalizar a criação:**
    - Clique em **Create Queue**.
 
-### **4.3. Criar os restantes das Filas**
+### **5.3. Criar os restantes das Filas**
 8. Repita os passos 4.1 e 4.2 para as filas:
    - `sqs-pedido-alterado.fifo` / `sqs-pedido-alterado-dlq.fifo`
    - `sqs-pedido-cancelado.fifo` / `sqs-pedido-cancelado-dlq.fifo`
 
 ---
 
-## **Etapa 5: Criar o EventBridge Bus e Regras**
+## **Etapa 6: Criar o EventBridge Bus e Regras**
 
-### 5.1. Criar um Event Bus
+### 6.1. Criar um Event Bus
 1. No console da AWS, vá em **Amazon EventBridge**.
 2. Em **Event buses** > **Create event bus**.
 3. **Name:** `event-bus-pedidos`.
 4. Clique em **Create**.
 
-### 5.2. Criar 3 Regras de Roteamento
+### 6.2. Criar 3 Regras de Roteamento
 Precisamos rotear de acordo com `order_status`, conforme o código do Lambda.
 
-#### 5.2.1. Regra Pendente
+#### 6.2.1. Regra Pendente
 1. No menu da esquerda clique em **Rules**
 2. clique em **Create rule**
 
@@ -367,7 +402,7 @@ Precisamos rotear de acordo com `order_status`, conforme o código do Lambda.
 8. **Create rule**.
 
 
-#### 4.2.2. Regra Alterar Pedido
+#### 6.2.2. Regra Alterar Pedido
 Repita o procedimento para a regra **Alterar Pedido** conforme as informações abaixo
 
 - **Name:** `regra-pedido-alterar`
@@ -384,7 +419,7 @@ Repita o procedimento para a regra **Alterar Pedido** conforme as informações 
 - **Target:** `sqs-pedido-alterado.fifo`
 - **MessageGroupId:** `orders-group`
 
-#### 4.2.3. Regra Cancela Pedido
+#### 6.2.3. Regra Cancela Pedido
 Repita o procedimento para a regra **Cancela Pedido** conforme as informações abaixo
 
 - **Name:** `regra-pedido-cancela`
@@ -404,7 +439,7 @@ Repita o procedimento para a regra **Cancela Pedido** conforme as informações 
 ---
 
 
-## **Etapa 6: Teste Manual no Console (Lambda)**
+## **Etapa 7: Teste Manual no Console (Lambda)**
 
 Para testar sua **Lambda** de forma isolada:
 
@@ -437,7 +472,7 @@ Para testar sua **Lambda** de forma isolada:
 
 ---
 
-## **Etapa 7: Validar o Fluxo Completo**
+## **Etapa 8: Validar o Fluxo Completo**
 
 Para um **teste de ponta a ponta** (opcional), use a **Primeira Lambda** (que lê do S3 e envia para `sqs-pedidos-validos.fifo`). Assim que a mensagem chegar nessa fila:
 1. Ela aciona automaticamente a `validation-and-send-lambda`.
