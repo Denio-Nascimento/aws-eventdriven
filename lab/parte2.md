@@ -2,22 +2,37 @@
 
 Este laboratório é a **segunda parte** do fluxo de processamento de pedidos. Supondo que já exista uma Lambda anterior que insere pedidos em uma fila SQS FIFO (chamada `sqs-pedidos-validos.fifo`), agora vamos:
 
-1. **Criar a Lambda de Validação** que:
-   - Lê pedidos da fila `sqs-pedidos-validos.fifo`.
-   - Valida dados obrigatórios.
-   - Se válidos, envia evento ao **Amazon EventBridge**.
-   - Se inválidos, envia alerta via **SNS**.
+![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_1.png)
 
-2. **Criar e Configurar o Amazon SNS** para notificar sobre pedidos inválidos.
+## **O que Você Irá Aprender nesta atividade**
 
-3. **Criar um Event Bus** no **Amazon EventBridge** e **3 Regras** de roteamento, cada uma para um status de pedido:
-   - `Pendente`  
-   - `Alterar Pedido`  
-   - `Cancela Pedido`  
+- [**Etapa 1:** Criar a Layer de Validação](#etapa-1-criar-o-bucket-s3-e-o-prefixo-para-os-pedidos).
+- [**Etapa 2:** Criar a Lambda de Validação e Envio](#etapa-2-criar-as-filas-sqs)
+- [**Etapa 3:** Permissões IAM da Lambda.](#etapa-4-lambda-de-extração-de-pedido-e-controle-de-duplicidade)
+- [**Etapa 4:** Criar o SNS para Notificações.](#etapa-4-lambda-de-extração-de-pedido-e-controle-de-duplicidade)
+- [**Etapa 5:** Criar Filas SQS de Destino e DLQs](#etapa-5-criar-em-s3-notification)
+  - [**5.1** Criar a Fila SQS Dead Letter Queue (DLQ)](#21-fila-standard-sqs-pedidos-json)
+  - [**5.2** Criar a Fila SQS e associar a (DLQ).](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
+- [**Etapa 6:** Criar o EventBridge Bus e Regras.](#etapa-3-criar-tabela-no-dynamodb)
+  - [**6.1** Criar um Event Bus)](#21-fila-standard-sqs-pedidos-json)
+  - [**6.2** Criar as Regras de Roteamento.](#22-fila-dlq-fifo-sqs-pedidos-dlqfifo)
+- [**Etapa 7:** Teste Manual no Console (Lambda)](#etapa-5-criar-em-s3-notification)
+- [**Etapa 8:** Validar o Fluxo Completo](#etapa-6-teste-do-fluxo-completo)
 
-4. **Criar Filas SQS** (FIFO) de destino para cada status, cada uma com sua **DLQ** configurada.
+---
 
-5. **Testar** o fluxo tanto diretamente via console (evento de teste), quanto colocando mensagens na fila SQS ou enviando pedidos pela Lambda anterior (opcional).
+### **Pré-requisitos**
+
+- **Conta AWS ativa** com permissões para criar recursos (S3, SQS, SNS, Lambda, EventBridge e IAM).
+- **Acesso ao console da AWS** via navegador web.
+
+
+### Fluxo de Trabalho:
+- O Lambda é acionado quando a fila SQS padrão recebe uma notificação de evento S3.
+- O Lambda lê o arquivo do S3 e processa os pedidos.
+- Cada pedido é enviado para a fila SQS FIFO de destino.
+- O Lambda registra os pedidos no DynamoDB com detalhes básicos e evita duplicações.
+
 
 ---
 
