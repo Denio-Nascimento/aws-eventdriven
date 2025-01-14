@@ -16,7 +16,7 @@ A primeira parte (que se trata desse arquivo) ensina a desenvolver uma função 
 - [**Etapa 5:** Criar o Triger para Lambda SQS](#etapa-5-criar-em-s3-notification)
 - [**Etapa 6:** Testes completo do fluxo](#etapa-6-teste-do-fluxo-completo)
 
-![Arquitetura Lab1](imagens/arquiteturas/arquitetura-parte_1.png)
+![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_1.png)
 ---
 
 ### **Pré-requisitos**
