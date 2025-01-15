@@ -196,10 +196,7 @@ def send_to_eventbridge(order):
 	```json
 	{
 	  "order_id": "TS-00123",
-	  "company": {
-	    "name": "Tech Solutions Ltda",
-	    "cnpj": "12.345.678/0001-99"
-	  },
+	  "customer": { "name": "João Silva" },
 	  "items": [
 	    {
 	      "product_id": "TS-001",
@@ -207,7 +204,9 @@ def send_to_eventbridge(order):
 	      "quantity": 1,
 	      "unit_price": 2500.00
 	    }
- 	  ],
+	  ],
+	  "payment": { "method": "credit_card", "status": "paid" },
+	  "company": { "name": "Tech Solutions Ltda", "cnpj": "12.345.678/0001-99" },
 	  "order_status": "Pendente"
 	}
 	```
