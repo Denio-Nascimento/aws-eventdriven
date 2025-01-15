@@ -82,7 +82,7 @@ def send_to_eventbridge(order):
 2. Clique em **Edit** e depois em **Add environment variable**:
    - **Key:** `EVENT_BUS_NAME`
    - **Value:** `event-bus-pedidos`.
-
+3. Clique em **Save**.
 
 ### 1.5. Configurar Layer
 1. Na aba **Code**, vá até a seção **Layers**.
@@ -90,7 +90,7 @@ def send_to_eventbridge(order):
 3. Selecione **Custom layers**
 4. Selecione **order-validation-layer**
 5. Version **1** ou a mais recente
-6. Clique em **Save**.
+6. Clique em **Add**.
 
 ### 1.6. Permissões IAM
 
@@ -185,9 +185,10 @@ def send_to_eventbridge(order):
 
 ### **3.1. Realizar um Teste direto no API GATEWAY**
 
-1. Na console do AWS API Gateway clique no Método **POST**.
-2. Clique na ABA **Test**
-3. Em **Test method** preencha os campos:
+1. Na console do AWS API Gateway, no menu lateral, clique Resource
+2. Clique no Método **POST**.
+3. Clique na ABA **Test**
+4. Em **Test method** preencha os campos:
    - **Query strings:** deixe vazio, pois não estamos utilizando parâmetros na URL.
    - **Headers:** `application/json`
    - **Request Body:**
@@ -205,9 +206,9 @@ def send_to_eventbridge(order):
 	      "description": "Smartphone XYZ",
 	      "quantity": 1,
 	      "unit_price": 2500.00
-	    },
+	    }
+ 	  ],
 	  "order_status": "Pendente"
-	  ]
 	}
 	```
 
