@@ -181,7 +181,7 @@ def send_to_eventbridge(order):
 
 ---
 
-## **Etapa 3: Teste Manual no Console (Api Gateway)**
+## **Etapa 3: Teste Manual no Console (Api Gateway e Lambda)**
 
 ### **3.1. Realizar um Teste direto no API GATEWAY**
 
@@ -212,7 +212,33 @@ def send_to_eventbridge(order):
 	}
 	```
 
-### **3.2. Verificação da Fila SQS**
+### **3.2. Teste para Lambda no Console AWS
+
+Para testar sua Lambda diretamente pelo console AWS, copie o JSON de teste abaixo e insira na aba **Test** da função Lambda.
+
+## **Passos para Teste**
+1. No console AWS, acesse sua função Lambda.
+2. Clique em **Test** na parte superior direita.
+3. Clique em **Configure test event**.
+4. Escolha **Create new test event**.
+5. Nomeie o evento como `TestePedido`.
+6. Cole o JSON de teste fornecido no campo de conteúdo.
+~~~json
+{
+  "body": "{\"order_id\": \"12345\", \"customer\": { \"name\": \"João Silva\" }, \"items\": [{ \"product_id\": \"001\", \"quantity\": 2 }], \"payment\": { \"method\": \"credit_card\", \"status\": \"paid\" }, \"company\": { \"name\": \"Acme Corp\" }, \"order_status\": \"Pendente\" }"
+}
+~~~
+8. Clique em **Save**.
+9. Clique em **Test**.
+
+## **Resultados Esperados**
+- **200 OK**: Pedido processado com sucesso.
+- **400 Bad Request**: Retorna "Pedido inválido. Verifique os campos obrigatórios." se algum campo estiver ausente ou inválido.
+
+Se o retorno ainda indicar erro, verifique os logs no **CloudWatch** para capturar detalhes dos campos faltantes.
+
+
+### **3.3. Verificação da Fila SQS**
 
 1. Acesse a fila `order-processing.fifo`.
 2. Verifique se a mensagem foi recebida na aba **Messages available**.
@@ -220,7 +246,7 @@ def send_to_eventbridge(order):
 
 ---
 
-## **3.3. Monitoramento e Logs**
+## **3.4. Monitoramento e Logs**
 
 1. Acesse o console **CloudWatch**.
 2. Verifique os logs gerados pela função Lambda.
