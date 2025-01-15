@@ -69,7 +69,7 @@ def lambda_handler(event, context):
 
 def send_to_eventbridge(order):
     event = {
-        "Source": "socket-entregas.api",
+        "Source": "socket-entregas.orders",
         "DetailType": "OrderEvent",
         "Detail": json.dumps(order),
         "EventBusName": EVENT_BUS_NAME
