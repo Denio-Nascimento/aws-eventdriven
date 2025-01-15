@@ -1,4 +1,4 @@
-# **Laboratório Serverless AWS: Validação e Roteamento de Pedidos** 
+# **Segunda Parte: Validação e Roteamento de Pedidos** 
 
 Este laboratório é a **segunda parte** do fluxo de processamento de pedidos. Supondo que já exista uma Lambda anterior que insere pedidos em uma fila SQS FIFO (chamada `sqs-pedidos-validos.fifo`), agora vamos:
 
