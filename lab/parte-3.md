@@ -9,7 +9,7 @@ Esta etapa ensinará como configurar um API Gateway para receber pedidos via req
 
 - [**Etapa 1:** Criar a Função Lambda](#etapa-1-criar-a-função-lambda).
 - [**Etapa 2:** Criar o API Gateway](#etapa-2-criar-o-api-gateway)
-- [**Etapa 3:** Teste Manual no Console (Api Gateway).](#etapa-3-teste-manual-no-console-api-gateway)
+- [**Etapa 3:** Teste Manual no Console (Api Gateway).](#etapa-3-teste-manual-no-console-api-gateway-e-lambda)
 
 ## Etapa 1: Criar a Função Lambda
 
