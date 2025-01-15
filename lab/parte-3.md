@@ -1,6 +1,15 @@
 # Terceira Parte: Entrada de Pedidos via API Gateway
 Esta etapa ensinará como configurar um API Gateway para receber pedidos via requisições HTTP e como processá-los usando uma Lambda, com validação e envio para o EventBridge. Será reutilizada a layer de validação criada na segunda parte para garantir consistência.
 
+---
+
+![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_3.png)
+
+## **O que Você Irá Aprender nesta atividade**
+
+- [**Etapa 1:** Criar a Função Lambda](#etapa-1-criar-a-função-lambda).
+- [**Etapa 2:** Criar o API Gateway](#etapa-2-criar-o-api-gateway)
+- [**Etapa 3:** Teste Manual no Console (Api Gateway).](#etapa-3-permiss%C3%B5es-iam-da-lambda)
 
 ## Etapa 1: Criar a Função Lambda
 
@@ -172,7 +181,7 @@ def send_to_eventbridge(order):
 
 ---
 
-## **Etapa 3: Testar**
+## **Etapa 3: Teste Manual no Console (Api Gateway)**
 
 ### **3.1. Realizar um Teste direto no API GATEWAY**
 
