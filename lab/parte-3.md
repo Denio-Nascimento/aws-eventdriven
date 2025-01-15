@@ -153,6 +153,7 @@ def send_to_eventbridge(order):
 3. Em **Method type** Escolha **POST**.
 4. Configure:
    - **Integration Type:** Lambda Function.
+   - Habilite **Lambda proxy integration**
    - **Lambda Function:** `validation-and-send-api-lambda`
 5. Clique em **Create method**.
 
