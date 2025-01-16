@@ -10,6 +10,28 @@ Bem-vindo(a) à **quarta e última parte** do laboratório sobre **Arquitetura E
 
 ---
 
+## **Estrutura da Tabela DynamoDB**
+
+A tabela será estruturada da seguinte forma:
+
+| **PK**                          | **SK**                  | **GSI2#PK**               | **GSI2#SK**                                         |
+|----------------------------------|-------------------------|--------------------------|---------------------------------------------------|
+| COMPANY#<cnpj>#ORDER#<order_id>  | STATUS#<order_status>   |                          |                                                   |
+|                                  | ITEM#<product_id>       | ITEMSTATUS#<item_status> | COMPANY#<cnpj>#ORDER#<order_id>#ITEM#<product_id> |
+|                                  | CUSTOMER#<cpf>          |                          |                                                   |
+|                                  | META#<cnpj>             |                          |                                                   |
+|                                  | SHIPPING#<city>#<date>  |                          |                                                   |
+|                                  | PAYMENT#<payment_method>|                          |                                                   |
+
+Além do índice secundário `GSI2`, será criado um **novo índice GSI1** que inverte a **PK** e a **SK**:
+- **Partition Key:** `SK`
+- **Sort Key:** `PK`
+
+Esse índice permite realizar consultas rápidas utilizando os atributos secundários como principais.
+
+---
+
+
 ## **Índice**
 
 1. [**Visão Geral**](#visão-geral)  
