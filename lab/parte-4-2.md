@@ -283,7 +283,8 @@ Precisamos de:
       "Sid": "AllowBatchWriteDynamo",
       "Effect": "Allow",
       "Action": [
-        "dynamodb:BatchWriteItem"
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem"
       ],
       "Resource": "arn:aws:dynamodb:REGION:ACCOUNT_ID:table/pedido"
     },
@@ -383,6 +384,39 @@ def lambda_handler(event, context):
 - **sqs:ReceiveMessage**, **sqs:DeleteMessage**, **sqs:GetQueueAttributes** (fila `sqs-pedido-alterado.fifo`).
 
 (É semelhante ao exemplo anterior; só troque `BatchWriteItem` por `UpdateItem` e o ARN da fila.)
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowGetParameter",
+			"Effect": "Allow",
+			"Action": "ssm:GetParameter",
+			"Resource": "arn:aws:ssm:us-east-1:884870024531:parameter/lab/pedido/table_name"
+		},
+		{
+			"Sid": "AllowBatchWriteDynamo",
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:BatchWriteItem",
+				"dynamodb:UpdateItem"
+			],
+			"Resource": "arn:aws:dynamodb:us-east-1:884870024531:table/pedido"
+		},
+		{
+			"Sid": "AllowSQSTrigger",
+			"Effect": "Allow",
+			"Action": [
+				"sqs:ReceiveMessage",
+				"sqs:DeleteMessage",
+				"sqs:GetQueueAttributes"
+			],
+			"Resource": "arn:aws:sqs:us-east-1:884870024531:sqs-pedido-alterado.fifo"
+		}
+	]
+}
+```
 
 ### 3.4. Adicionar Trigger SQS
 
@@ -492,6 +526,35 @@ Precisa de:
 - `ssm:GetParameter`  
 - `dynamodb:Query`, `dynamodb:DeleteItem`, `dynamodb:PutItem`, `dynamodb:UpdateItem`  
 - `sqs:ReceiveMessage`, `sqs:DeleteMessage`, `sqs:GetQueueAttributes` na fila `sqs-pedido-cancelado.fifo`.
+  
+```python
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:DeleteMessage",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:DeleteItem",
+                "sqs:ReceiveMessage",
+                "dynamodb:GetItem",
+                "sqs:GetQueueAttributes",
+                "dynamodb:Query",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "ssm:GetParameter"
+            ],
+            "Resource": [
+                "arn:aws:sqs:us-east-1:884870024531:sqs-pedido-cancelado.fifo",
+                "arn:aws:ssm:us-east-1:884870024531:parameter/lab/pedido/table_name",
+                "arn:aws:dynamodb:us-east-1:884870024531:table/pedido"
+            ]
+        }
+    ]
+}
+```
 
 ### 4.4. Adicionar Trigger SQS
 
