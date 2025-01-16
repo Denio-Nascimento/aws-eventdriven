@@ -2,7 +2,8 @@
 
 Bem-vindo(a) à **quarta e última parte** do laboratório sobre **Arquitetura Event Driven** para **processar pedidos** na AWS. Aqui, vamos **finalizar** o fluxo, criando **três funções Lambda** que vão **operar** (inserir, alterar ou cancelar) os pedidos no DynamoDB, consumindo mensagens de **três filas SQS FIFO** distintas, roteadas pelo EventBridge.
 
---
+---
+
 ![Arquitetura Lab4](../imagens/arquiteturas/arquitetura-parte_4.png)
 
 > **Objetivo**  
