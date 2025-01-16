@@ -20,7 +20,7 @@ A tabela será estruturada da seguinte forma:
 |                                  | ITEM#<product_id>       | ITEMSTATUS#<item_status> | COMPANY#<cnpj>#ORDER#<order_id>#ITEM#<product_id> |
 |                                  | CUSTOMER#<cpf>          |                          |                                                   |
 |                                  | META#<cnpj>             |                          |                                                   |
-|                                  | SHIPPING#<city>#<date>  |                          |                                                   |
+|                                  | SHIPPING#<UF>#<date>  |                          |                                                   |
 |                                  | PAYMENT#<payment_method>|                          |                                                   |
 
 Além do índice secundário `GSI2`, será criado um **novo índice GSI1** que inverte a **PK** e a **SK**:
