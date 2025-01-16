@@ -2,7 +2,7 @@
 
 Este laboratório é a **segunda parte** do fluxo de processamento de pedidos. Supondo que já exista uma Lambda anterior que insere pedidos em uma fila SQS FIFO (chamada `sqs-pedidos-validos.fifo`), agora vamos:
 
-![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_2.png)
+![Arquitetura Lab2](../imagens/arquiteturas/arquitetura-parte_2.png)
 
 ## **O que Você Irá Aprender nesta atividade**
 
