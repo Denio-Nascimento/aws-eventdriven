@@ -2,6 +2,10 @@
 
 Nesta etapa final, vamos construir um backend que processa pedidos nas filas SQS geradas pelo EventBridge. Os pedidos serão armazenados em uma estrutura **Single Table Design** no DynamoDB. Três funções Lambda serão implementadas para **armazenar, alterar e cancelar** pedidos.
 
+
+![Arquitetura Lab4](../imagens/arquiteturas/arquitetura-parte_4.png)
+
+
 ---
 
 ## **Estrutura da Tabela DynamoDB**
