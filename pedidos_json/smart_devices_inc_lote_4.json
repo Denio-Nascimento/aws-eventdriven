@@ -1,0 +1,1459 @@
+[
+    {
+        "order_id": "SM-64593",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Bárbara",
+            "last_name": "Santos",
+            "cpf": "102.345.769-52",
+            "email": "agathacaldeira@example.org",
+            "phone": "+55 41 3600-0393",
+            "address": {
+                "street": "Campo Melo",
+                "number": "735",
+                "complement": "Apto 1",
+                "neighborhood": "Santa Cruz",
+                "city": "Costela de Minas",
+                "state": "PR",
+                "zip_code": "63424056"
+            }
+        },
+        "order_date": "2025-01-05 02:22:53",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 2,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 5,
+                "unit_price": 800.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-8614138152",
+            "amount": 5800.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 12.184234760925413,
+            "address": {
+                "street": "Fazenda Albuquerque",
+                "number": "417",
+                "complement": "Apto 84",
+                "neighborhood": "Vila Nova Gameleira 1ª Seção",
+                "city": "Novais do Amparo",
+                "state": "RR",
+                "zip_code": "37342-858"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-50500",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Fernando",
+            "last_name": "Mendonça",
+            "cpf": "871.960.435-10",
+            "email": "agatha08@example.com",
+            "phone": "0800 113 8328",
+            "address": {
+                "street": "Praça de Peixoto",
+                "number": "929",
+                "complement": "Apto 25",
+                "neighborhood": "Santa Maria",
+                "city": "Azevedo",
+                "state": "MS",
+                "zip_code": "08616466"
+            }
+        },
+        "order_date": "2025-01-01 06:45:40",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 1,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 4,
+                "unit_price": 600.0
+            },
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 1,
+                "unit_price": 200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-3326773351",
+            "amount": 3500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 26.133199012214277,
+            "address": {
+                "street": "Campo de Almeida",
+                "number": "637",
+                "complement": "Apto 40",
+                "neighborhood": "Renascença",
+                "city": "Dias",
+                "state": "AL",
+                "zip_code": "96298996"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-60640",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Josué",
+            "last_name": "Jesus",
+            "cpf": "261.908.374-50",
+            "email": "isis22@example.org",
+            "phone": "0300 743 6752",
+            "address": {
+                "street": "Trevo Ana Clara Ribeiro",
+                "number": "968",
+                "complement": "Apto 52",
+                "neighborhood": "Vila Nova Gameleira 1ª Seção",
+                "city": "Fernandes",
+                "state": "BA",
+                "zip_code": "98944695"
+            }
+        },
+        "order_date": "2025-01-11 05:17:41",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 3,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 2,
+                "unit_price": 3200.0
+            },
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 3,
+                "unit_price": 800.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-832636970",
+            "amount": 11500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 31.869499713926032,
+            "address": {
+                "street": "Praia Aurora Nascimento",
+                "number": "849",
+                "complement": "Apto 93",
+                "neighborhood": "Comiteco",
+                "city": "Nogueira de Goiás",
+                "state": "AL",
+                "zip_code": "24092031"
+            },
+            "expected_delivery_date": "2025-01-14"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-58759",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Ana Luiza",
+            "last_name": "Rodrigues",
+            "cpf": "916.053.247-52",
+            "email": "barrosalicia@example.org",
+            "phone": "+55 (021) 4684 4398",
+            "address": {
+                "street": "Colônia de Caldeira",
+                "number": "252",
+                "complement": "Apto 48",
+                "neighborhood": "Xodo-Marize",
+                "city": "Sampaio",
+                "state": "PB",
+                "zip_code": "72269-284"
+            }
+        },
+        "order_date": "2025-01-01 12:59:23",
+        "items": [
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 4,
+                "unit_price": 600.0
+            },
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 2,
+                "unit_price": 900.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-4925553079",
+            "amount": 4200.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 14.025495211826025,
+            "address": {
+                "street": "Vale da Mata",
+                "number": "734",
+                "complement": "Apto 9",
+                "neighborhood": "Santo Agostinho",
+                "city": "Sá do Amparo",
+                "state": "AM",
+                "zip_code": "48386337"
+            },
+            "expected_delivery_date": "2025-01-11"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-64234",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Oliver",
+            "last_name": "Costa",
+            "cpf": "124.796.580-58",
+            "email": "da-conceicaomaria-julia@example.com",
+            "phone": "+55 (021) 2871-6444",
+            "address": {
+                "street": "Morro da Luz",
+                "number": "167",
+                "complement": "Apto 72",
+                "neighborhood": "Vila Nova",
+                "city": "da Luz",
+                "state": "DF",
+                "zip_code": "54855-790"
+            }
+        },
+        "order_date": "2025-01-07 17:44:43",
+        "items": [
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 3,
+                "unit_price": 3200.0
+            },
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 4,
+                "unit_price": 200.0
+            },
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 5,
+                "unit_price": 900.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-402354176",
+            "amount": 14900.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 44.08348434682077,
+            "address": {
+                "street": "Distrito Vitória Costa",
+                "number": "650",
+                "complement": "Apto 75",
+                "neighborhood": "Vila Minaslandia",
+                "city": "Martins de Fernandes",
+                "state": "RJ",
+                "zip_code": "85546150"
+            },
+            "expected_delivery_date": "2025-01-02"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-95808",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Maria Luísa",
+            "last_name": "Nunes",
+            "cpf": "674.053.819-01",
+            "email": "da-cruzeloah@example.net",
+            "phone": "0800-531-2995",
+            "address": {
+                "street": "Rua Heloisa Barros",
+                "number": "727",
+                "complement": "Apto 95",
+                "neighborhood": "Heliopolis",
+                "city": "Martins",
+                "state": "CE",
+                "zip_code": "82313-486"
+            }
+        },
+        "order_date": "2025-01-02 09:45:16",
+        "items": [
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 2,
+                "unit_price": 600.0
+            },
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 3,
+                "unit_price": 200.0
+            },
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 1,
+                "unit_price": 800.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-2229463359",
+            "amount": 2600.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 36.678686878195975,
+            "address": {
+                "street": "Via de Câmara",
+                "number": "852",
+                "complement": "Apto 1",
+                "neighborhood": "Vila Santa Monica 1ª Seção",
+                "city": "Novais da Praia",
+                "state": "MT",
+                "zip_code": "65394007"
+            },
+            "expected_delivery_date": "2025-01-06"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-23631",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Amanda",
+            "last_name": "Mendonça",
+            "cpf": "819.203.465-89",
+            "email": "antonella98@example.com",
+            "phone": "+55 11 2175-1245",
+            "address": {
+                "street": "Praça de Cunha",
+                "number": "601",
+                "complement": "Apto 99",
+                "neighborhood": "São Marcos",
+                "city": "Porto",
+                "state": "AM",
+                "zip_code": "43464876"
+            }
+        },
+        "order_date": "2025-01-16 00:12:49",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 1,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 1,
+                "unit_price": 800.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-8842920107",
+            "amount": 1700.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 25.31560441409512,
+            "address": {
+                "street": "Ladeira Erick Nogueira",
+                "number": "984",
+                "complement": "Apto 94",
+                "neighborhood": "Floresta",
+                "city": "Mendes do Galho",
+                "state": "RO",
+                "zip_code": "66477373"
+            },
+            "expected_delivery_date": "2025-01-04"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-74177",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Ísis",
+            "last_name": "Sá",
+            "cpf": "178.564.302-90",
+            "email": "svieira@example.org",
+            "phone": "+55 84 6320-2956",
+            "address": {
+                "street": "Residencial da Costa",
+                "number": "285",
+                "complement": "Apto 43",
+                "neighborhood": "São José",
+                "city": "Fernandes",
+                "state": "DF",
+                "zip_code": "46289641"
+            }
+        },
+        "order_date": "2025-01-04 04:08:30",
+        "items": [
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 3,
+                "unit_price": 800.0
+            },
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 5,
+                "unit_price": 900.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-3444262269",
+            "amount": 6900.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 45.73591785340017,
+            "address": {
+                "street": "Quadra Correia",
+                "number": "108",
+                "complement": "Apto 53",
+                "neighborhood": "Santa Rita",
+                "city": "da Luz de Nogueira",
+                "state": "AC",
+                "zip_code": "41956527"
+            },
+            "expected_delivery_date": "2025-01-06"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-37160",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "João Vitor",
+            "last_name": "Almeida",
+            "cpf": "738.246.591-82",
+            "email": "helena93@example.com",
+            "phone": "+55 (031) 0557-1589",
+            "address": {
+                "street": "Rodovia de da Mata",
+                "number": "111",
+                "complement": "Apto 40",
+                "neighborhood": "Vila Ipiranga",
+                "city": "Fernandes do Amparo",
+                "state": "PB",
+                "zip_code": "08597444"
+            }
+        },
+        "order_date": "2025-01-09 20:08:27",
+        "items": [
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 5,
+                "unit_price": 600.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-8959928408",
+            "amount": 3000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 29.582723490804153,
+            "address": {
+                "street": "Rua Ana Sophia Silveira",
+                "number": "118",
+                "complement": "Apto 41",
+                "neighborhood": "Novo Das Industrias",
+                "city": "Gomes",
+                "state": "PE",
+                "zip_code": "12742-983"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-81089",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Mirella",
+            "last_name": "Machado",
+            "cpf": "861.302.594-33",
+            "email": "lavinia08@example.org",
+            "phone": "0900-353-8806",
+            "address": {
+                "street": "Distrito Yuri Ferreira",
+                "number": "367",
+                "complement": "Apto 68",
+                "neighborhood": "Vila Jardim Leblon",
+                "city": "Vasconcelos da Praia",
+                "state": "GO",
+                "zip_code": "66713607"
+            }
+        },
+        "order_date": "2025-01-09 10:01:46",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 1,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 3,
+                "unit_price": 600.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-6183280971",
+            "amount": 2700.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 29.019106509121904,
+            "address": {
+                "street": "Condomínio Eduardo Dias",
+                "number": "163",
+                "complement": "Apto 76",
+                "neighborhood": "Vila São Paulo",
+                "city": "Pires do Norte",
+                "state": "CE",
+                "zip_code": "70006-131"
+            },
+            "expected_delivery_date": "2025-01-03"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-75569",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Maria Flor",
+            "last_name": "Jesus",
+            "cpf": "284.539.701-14",
+            "email": "maria-alice92@example.com",
+            "phone": "+55 81 7011-3378",
+            "address": {
+                "street": "Travessa Fogaça",
+                "number": "505",
+                "complement": "Apto 42",
+                "neighborhood": "Fazendinha",
+                "city": "Azevedo das Pedras",
+                "state": "AC",
+                "zip_code": "72031195"
+            }
+        },
+        "order_date": "2025-01-12 05:40:58",
+        "items": [
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 1,
+                "unit_price": 200.0
+            },
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 1,
+                "unit_price": 3200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-3771616895",
+            "amount": 3400.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 29.32460251943336,
+            "address": {
+                "street": "Viela Nina Cavalcante",
+                "number": "684",
+                "complement": "Apto 64",
+                "neighborhood": "São Salvador",
+                "city": "Nogueira",
+                "state": "MA",
+                "zip_code": "11177995"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "SM-26743",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Ana Lívia",
+            "last_name": "Aparecida",
+            "cpf": "328.659.174-28",
+            "email": "cmoreira@example.net",
+            "phone": "71 8078 6493",
+            "address": {
+                "street": "Sítio de Teixeira",
+                "number": "874",
+                "complement": "Apto 10",
+                "neighborhood": "Barão Homem De Melo 3ª Seção",
+                "city": "Nunes do Norte",
+                "state": "MS",
+                "zip_code": "63244250"
+            }
+        },
+        "order_date": "2025-01-10 06:36:03",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 3,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 2,
+                "unit_price": 600.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-6356691580",
+            "amount": 3900.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 10.259567376412239,
+            "address": {
+                "street": "Estação Rodrigues",
+                "number": "170",
+                "complement": "Apto 61",
+                "neighborhood": "Jardim Montanhês",
+                "city": "da Mota da Serra",
+                "state": "PI",
+                "zip_code": "91176-778"
+            },
+            "expected_delivery_date": "2025-01-02"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "SM-75879",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Sofia",
+            "last_name": "Fernandes",
+            "cpf": "924.065.837-83",
+            "email": "camaragiovanna@example.com",
+            "phone": "+55 31 9275 7758",
+            "address": {
+                "street": "Praia de Lima",
+                "number": "174",
+                "complement": "Apto 32",
+                "neighborhood": "Guarani",
+                "city": "da Cunha",
+                "state": "PB",
+                "zip_code": "34659048"
+            }
+        },
+        "order_date": "2025-01-13 10:56:28",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 3,
+                "unit_price": 900.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-9407926753",
+            "amount": 2700.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 45.07702495338958,
+            "address": {
+                "street": "Quadra Lopes",
+                "number": "752",
+                "complement": "Apto 88",
+                "neighborhood": "Silveira",
+                "city": "da Rosa do Amparo",
+                "state": "RN",
+                "zip_code": "45274-855"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-72041",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Breno",
+            "last_name": "Cirino",
+            "cpf": "956.047.821-49",
+            "email": "enzo20@example.net",
+            "phone": "0300 584 8208",
+            "address": {
+                "street": "Distrito Isaac Jesus",
+                "number": "217",
+                "complement": "Apto 86",
+                "neighborhood": "Colégio Batista",
+                "city": "Almeida do Oeste",
+                "state": "PA",
+                "zip_code": "80775-744"
+            }
+        },
+        "order_date": "2025-01-12 08:23:51",
+        "items": [
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 4,
+                "unit_price": 800.0
+            },
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 4,
+                "unit_price": 200.0
+            },
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 1,
+                "unit_price": 3200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-9848637315",
+            "amount": 7200.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 22.1440105942381,
+            "address": {
+                "street": "Largo Ana Jesus",
+                "number": "115",
+                "complement": "Apto 55",
+                "neighborhood": "Mantiqueira",
+                "city": "da Cunha de Dias",
+                "state": "DF",
+                "zip_code": "29723899"
+            },
+            "expected_delivery_date": "2025-01-03"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-45403",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Gael",
+            "last_name": "Leão",
+            "cpf": "279.843.061-50",
+            "email": "maraujo@example.com",
+            "phone": "+55 41 7896-8830",
+            "address": {
+                "street": "Ladeira Davi Luiz da Mota",
+                "number": "383",
+                "complement": "Apto 54",
+                "neighborhood": "Nossa Senhora Da Aparecida",
+                "city": "Melo das Pedras",
+                "state": "PI",
+                "zip_code": "24980-470"
+            }
+        },
+        "order_date": "2025-01-13 08:45:21",
+        "items": [
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 4,
+                "unit_price": 3200.0
+            },
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 1,
+                "unit_price": 800.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-8369551085",
+            "amount": 13600.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 11.024833632771296,
+            "address": {
+                "street": "Praça de Lopes",
+                "number": "595",
+                "complement": "Apto 99",
+                "neighborhood": "Vila Inestan",
+                "city": "Lima da Serra",
+                "state": "MG",
+                "zip_code": "62647-513"
+            },
+            "expected_delivery_date": "2025-01-03"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-30616",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "José",
+            "last_name": "Machado",
+            "cpf": "729.316.485-82",
+            "email": "nunesdavi-lucas@example.com",
+            "phone": "+55 41 0134 8709",
+            "address": {
+                "street": "Via Sá",
+                "number": "32",
+                "complement": "Apto 9",
+                "neighborhood": "Cardoso",
+                "city": "Castro",
+                "state": "RJ",
+                "zip_code": "55453998"
+            }
+        },
+        "order_date": "2025-01-13 17:44:58",
+        "items": [
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 5,
+                "unit_price": 900.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-4554360262",
+            "amount": 4500.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 30.748164802687143,
+            "address": {
+                "street": "Lago de Nogueira",
+                "number": "70",
+                "complement": "Apto 38",
+                "neighborhood": "Lorena",
+                "city": "Pimenta Grande",
+                "state": "RN",
+                "zip_code": "63103-937"
+            },
+            "expected_delivery_date": "2025-01-09"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "SM-74056",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Helena",
+            "last_name": "Teixeira",
+            "cpf": "584.103.276-35",
+            "email": "antonio57@example.org",
+            "phone": "+55 (011) 5202-8342",
+            "address": {
+                "street": "Sítio Catarina Vargas",
+                "number": "166",
+                "complement": "Apto 13",
+                "neighborhood": "Pirineus",
+                "city": "Marques de Peixoto",
+                "state": "MA",
+                "zip_code": "44471-865"
+            }
+        },
+        "order_date": "2025-01-14 17:28:14",
+        "items": [
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 1,
+                "unit_price": 200.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-2489036226",
+            "amount": 200.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 17.754863194027788,
+            "address": {
+                "street": "Sítio Pimenta",
+                "number": "502",
+                "complement": "Apto 22",
+                "neighborhood": "Apolonia",
+                "city": "Lima",
+                "state": "SP",
+                "zip_code": "99019779"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-26035",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Clara",
+            "last_name": "Monteiro",
+            "cpf": "985.461.270-85",
+            "email": "siqueiramatheus@example.org",
+            "phone": "(021) 6764 8283",
+            "address": {
+                "street": "Chácara Gabriela Pacheco",
+                "number": "34",
+                "complement": "Apto 34",
+                "neighborhood": "Nossa Senhora Aparecida",
+                "city": "Fogaça Verde",
+                "state": "RN",
+                "zip_code": "21787-143"
+            }
+        },
+        "order_date": "2025-01-01 23:31:03",
+        "items": [
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 1,
+                "unit_price": 200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-911992947",
+            "amount": 200.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 12.274632553747677,
+            "address": {
+                "street": "Travessa Siqueira",
+                "number": "995",
+                "complement": "Apto 65",
+                "neighborhood": "Brasil Industrial",
+                "city": "da Paz",
+                "state": "PR",
+                "zip_code": "04253845"
+            },
+            "expected_delivery_date": "2025-01-04"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-80",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "João Felipe",
+            "last_name": "das Neves",
+            "cpf": "039.412.857-50",
+            "email": "sophia41@example.org",
+            "phone": "0500-561-5277",
+            "address": {
+                "street": "Loteamento Cecília da Luz",
+                "number": "658",
+                "complement": "Apto 36",
+                "neighborhood": "Estrela Do Oriente",
+                "city": "Correia de Ribeiro",
+                "state": "PA",
+                "zip_code": "57835-568"
+            }
+        },
+        "order_date": "2025-01-02 02:39:54",
+        "items": [
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 1,
+                "unit_price": 200.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-6099217868",
+            "amount": 200.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 35.35614357579612,
+            "address": {
+                "street": "Largo de Pastor",
+                "number": "525",
+                "complement": "Apto 52",
+                "neighborhood": "Comiteco",
+                "city": "Silveira da Praia",
+                "state": "GO",
+                "zip_code": "01294492"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "SM-81495",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "João Guilherme",
+            "last_name": "Nunes",
+            "cpf": "796.502.184-67",
+            "email": "alice50@example.net",
+            "phone": "+55 (071) 4769-2279",
+            "address": {
+                "street": "Largo de Nunes",
+                "number": "87",
+                "complement": "Apto 79",
+                "neighborhood": "São Salvador",
+                "city": "Siqueira",
+                "state": "DF",
+                "zip_code": "77223136"
+            }
+        },
+        "order_date": "2025-01-11 05:49:13",
+        "items": [
+            {
+                "product_id": "SD-003",
+                "description": "Caixa de Som Bluetooth",
+                "quantity": 2,
+                "unit_price": 600.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-1067064056",
+            "amount": 1200.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 49.82315704573424,
+            "address": {
+                "street": "Passarela de Oliveira",
+                "number": "606",
+                "complement": "Apto 90",
+                "neighborhood": "Tiradentes",
+                "city": "Costela",
+                "state": "RN",
+                "zip_code": "26734-118"
+            },
+            "expected_delivery_date": "2025-01-06"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-74798",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Heloísa",
+            "last_name": "da Conceição",
+            "cpf": "204.538.197-88",
+            "email": "qborges@example.org",
+            "phone": "+55 11 9321 5585",
+            "address": {
+                "street": "Vila Porto",
+                "number": "741",
+                "complement": "Apto 24",
+                "neighborhood": "Sion",
+                "city": "Melo",
+                "state": "RR",
+                "zip_code": "19761-043"
+            }
+        },
+        "order_date": "2025-01-09 17:02:51",
+        "items": [
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 1,
+                "unit_price": 3200.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-5027099872",
+            "amount": 3200.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 36.383731544417,
+            "address": {
+                "street": "Quadra de Duarte",
+                "number": "902",
+                "complement": "Apto 81",
+                "neighborhood": "Vila Betânia",
+                "city": "Peixoto",
+                "state": "RJ",
+                "zip_code": "43065-286"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-11365",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Caroline",
+            "last_name": "Albuquerque",
+            "cpf": "207.369.154-43",
+            "email": "gporto@example.com",
+            "phone": "+55 31 8543 2055",
+            "address": {
+                "street": "Viela Sophie Araújo",
+                "number": "763",
+                "complement": "Apto 42",
+                "neighborhood": "Bacurau",
+                "city": "Sales do Sul",
+                "state": "RR",
+                "zip_code": "53159-818"
+            }
+        },
+        "order_date": "2025-01-09 18:46:11",
+        "items": [
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 3,
+                "unit_price": 800.0
+            },
+            {
+                "product_id": "SD-005",
+                "description": "Câmera de Segurança",
+                "quantity": 1,
+                "unit_price": 900.0
+            },
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 5,
+                "unit_price": 200.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-2952181980",
+            "amount": 4300.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 46.5501949183479,
+            "address": {
+                "street": "Colônia Ayla da Luz",
+                "number": "960",
+                "complement": "Apto 56",
+                "neighborhood": "Novo São Lucas",
+                "city": "Novais Verde",
+                "state": "PB",
+                "zip_code": "35360347"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-88957",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "João Guilherme",
+            "last_name": "Moraes",
+            "cpf": "319.485.072-50",
+            "email": "obrito@example.org",
+            "phone": "71 0948 2829",
+            "address": {
+                "street": "Morro Fogaça",
+                "number": "706",
+                "complement": "Apto 93",
+                "neighborhood": "Ademar Maldonado",
+                "city": "Machado do Norte",
+                "state": "RO",
+                "zip_code": "36560285"
+            }
+        },
+        "order_date": "2025-01-15 21:32:17",
+        "items": [
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 3,
+                "unit_price": 3200.0
+            },
+            {
+                "product_id": "SD-004",
+                "description": "Fone Intra-Auricular",
+                "quantity": 2,
+                "unit_price": 200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-3055798858",
+            "amount": 10000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 44.96388181534142,
+            "address": {
+                "street": "Loteamento de Nogueira",
+                "number": "515",
+                "complement": "Apto 16",
+                "neighborhood": "Outro",
+                "city": "Fernandes",
+                "state": "SE",
+                "zip_code": "74222-001"
+            },
+            "expected_delivery_date": "2025-01-15"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-7291",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Liz",
+            "last_name": "Carvalho",
+            "cpf": "185.204.937-50",
+            "email": "rsouza@example.net",
+            "phone": "+55 11 9519-5959",
+            "address": {
+                "street": "Distrito de Mendonça",
+                "number": "761",
+                "complement": "Apto 55",
+                "neighborhood": "Castanheira",
+                "city": "Sales",
+                "state": "CE",
+                "zip_code": "60063-059"
+            }
+        },
+        "order_date": "2025-01-08 22:06:24",
+        "items": [
+            {
+                "product_id": "SD-001",
+                "description": "Relógio Smart",
+                "quantity": 1,
+                "unit_price": 800.0
+            },
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 2,
+                "unit_price": 3200.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-983862124",
+            "amount": 7200.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 40.78728209450425,
+            "address": {
+                "street": "Vereda da Luz",
+                "number": "210",
+                "complement": "Apto 74",
+                "neighborhood": "Mirante",
+                "city": "Fonseca",
+                "state": "MS",
+                "zip_code": "18289-789"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "SM-4497",
+        "company": {
+            "name": "Smart Devices Inc",
+            "cnpj": "22.222.222/0001-22"
+        },
+        "customer": {
+            "first_name": "Esther",
+            "last_name": "Fonseca",
+            "cpf": "724.508.619-20",
+            "email": "zsantos@example.com",
+            "phone": "(031) 8802 3608",
+            "address": {
+                "street": "Trevo Novaes",
+                "number": "618",
+                "complement": "Apto 95",
+                "neighborhood": "Vila Madre Gertrudes 4ª Seção",
+                "city": "Teixeira do Norte",
+                "state": "RO",
+                "zip_code": "47228-045"
+            }
+        },
+        "order_date": "2025-01-12 03:06:59",
+        "items": [
+            {
+                "product_id": "SD-002",
+                "description": "Tablet XYZ",
+                "quantity": 2,
+                "unit_price": 3200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-7973768386",
+            "amount": 6400.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 34.726679810120814,
+            "address": {
+                "street": "Campo Costa",
+                "number": "551",
+                "complement": "Apto 73",
+                "neighborhood": "Santo Agostinho",
+                "city": "Peixoto de Abreu",
+                "state": "RR",
+                "zip_code": "29153-797"
+            },
+            "expected_delivery_date": "2025-01-04"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    }
+]

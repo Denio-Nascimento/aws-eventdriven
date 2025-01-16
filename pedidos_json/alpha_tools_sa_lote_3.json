@@ -1,0 +1,1447 @@
+[
+    {
+        "order_id": "AL-74681",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Leonardo",
+            "last_name": "Rezende",
+            "cpf": "065.729.348-29",
+            "email": "miguel17@example.com",
+            "phone": "71 7170 3298",
+            "address": {
+                "street": "Área Juliana Camargo",
+                "number": "918",
+                "complement": "Apto 26",
+                "neighborhood": "Conjunto Califórnia Ii",
+                "city": "Caldeira de Goiás",
+                "state": "CE",
+                "zip_code": "03855-957"
+            }
+        },
+        "order_date": "2025-01-09 17:52:04",
+        "items": [
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 3,
+                "unit_price": 2200.0
+            },
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 4,
+                "unit_price": 4000.0
+            },
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 2,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-3498412166",
+            "amount": 23600.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 33.02049678340627,
+            "address": {
+                "street": "Quadra Eloah Monteiro",
+                "number": "860",
+                "complement": "Apto 6",
+                "neighborhood": "Horto Florestal",
+                "city": "Vieira de Aparecida",
+                "state": "MS",
+                "zip_code": "21051763"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-91971",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Ravi",
+            "last_name": "Sousa",
+            "cpf": "123.046.785-80",
+            "email": "caldeiraester@example.org",
+            "phone": "(061) 1969-8741",
+            "address": {
+                "street": "Recanto da Paz",
+                "number": "773",
+                "complement": "Apto 85",
+                "neighborhood": "Santa Rita De Cássia",
+                "city": "Silveira de Araújo",
+                "state": "SC",
+                "zip_code": "84594834"
+            }
+        },
+        "order_date": "2025-01-15 12:43:10",
+        "items": [
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 5,
+                "unit_price": 2200.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-3571887183",
+            "amount": 11000.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 32.122735964855515,
+            "address": {
+                "street": "Largo da Mata",
+                "number": "294",
+                "complement": "Apto 34",
+                "neighborhood": "Vila Trinta E Um De Março",
+                "city": "Moreira do Amparo",
+                "state": "DF",
+                "zip_code": "62294296"
+            },
+            "expected_delivery_date": "2025-01-08"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-71907",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Marcela",
+            "last_name": "Araújo",
+            "cpf": "435.967.218-73",
+            "email": "machadopietra@example.org",
+            "phone": "41 4695-4784",
+            "address": {
+                "street": "Jardim Aragão",
+                "number": "1",
+                "complement": "Apto 4",
+                "neighborhood": "Tupi B",
+                "city": "Novais",
+                "state": "SE",
+                "zip_code": "07934125"
+            }
+        },
+        "order_date": "2025-01-14 21:37:12",
+        "items": [
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 1,
+                "unit_price": 1800.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-2148885453",
+            "amount": 1800.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 21.230978363988164,
+            "address": {
+                "street": "Passarela de Nascimento",
+                "number": "626",
+                "complement": "Apto 29",
+                "neighborhood": "Alpes",
+                "city": "Alves",
+                "state": "AP",
+                "zip_code": "34440938"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-23443",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Bryan",
+            "last_name": "Vieira",
+            "cpf": "370.654.928-00",
+            "email": "svargas@example.net",
+            "phone": "71 9229 9924",
+            "address": {
+                "street": "Esplanada Laís Mendonça",
+                "number": "403",
+                "complement": "Apto 35",
+                "neighborhood": "Vila Copacabana",
+                "city": "Pinto",
+                "state": "SE",
+                "zip_code": "78284335"
+            }
+        },
+        "order_date": "2025-01-16 10:37:05",
+        "items": [
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 1,
+                "unit_price": 4000.0
+            },
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 4,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 2,
+                "unit_price": 1800.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-5094881202",
+            "amount": 8800.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 49.45237478916948,
+            "address": {
+                "street": "Pátio de Dias",
+                "number": "775",
+                "complement": "Apto 7",
+                "neighborhood": "São Lucas",
+                "city": "Aragão do Oeste",
+                "state": "RS",
+                "zip_code": "12151249"
+            },
+            "expected_delivery_date": "2025-01-14"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-17933",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Caleb",
+            "last_name": "Rodrigues",
+            "cpf": "760.249.318-40",
+            "email": "kaique63@example.org",
+            "phone": "+55 51 1381 5292",
+            "address": {
+                "street": "Pátio da Rosa",
+                "number": "89",
+                "complement": "Apto 53",
+                "neighborhood": "Vila Jardim Alvorada",
+                "city": "Ribeiro da Praia",
+                "state": "PE",
+                "zip_code": "60542-185"
+            }
+        },
+        "order_date": "2025-01-01 22:51:06",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 1,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-9160590913",
+            "amount": 500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 28.278723347543682,
+            "address": {
+                "street": "Avenida de Rezende",
+                "number": "553",
+                "complement": "Apto 95",
+                "neighborhood": "Vila Nova Gameleira 2ª Seção",
+                "city": "Carvalho dos Dourados",
+                "state": "SE",
+                "zip_code": "19994-368"
+            },
+            "expected_delivery_date": "2025-01-15"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-99800",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Aurora",
+            "last_name": "da Costa",
+            "cpf": "230.657.914-80",
+            "email": "aparecidaanna-liz@example.org",
+            "phone": "+55 84 0636 9602",
+            "address": {
+                "street": "Trecho Joaquim Casa Grande",
+                "number": "325",
+                "complement": "Apto 63",
+                "neighborhood": "Grotinha",
+                "city": "Macedo",
+                "state": "RS",
+                "zip_code": "93607424"
+            }
+        },
+        "order_date": "2025-01-04 21:34:39",
+        "items": [
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 5,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 4,
+                "unit_price": 2200.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-2815544114",
+            "amount": 10300.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 38.369449906415326,
+            "address": {
+                "street": "Lagoa de da Cruz",
+                "number": "170",
+                "complement": "Apto 66",
+                "neighborhood": "Castelo",
+                "city": "Monteiro do Norte",
+                "state": "RS",
+                "zip_code": "11188-655"
+            },
+            "expected_delivery_date": "2025-01-01"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-1085",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Davi Miguel",
+            "last_name": "Barros",
+            "cpf": "096.234.578-47",
+            "email": "jalbuquerque@example.org",
+            "phone": "+55 71 0362-5647",
+            "address": {
+                "street": "Ladeira Farias",
+                "number": "923",
+                "complement": "Apto 44",
+                "neighborhood": "Horto Florestal",
+                "city": "Araújo",
+                "state": "PR",
+                "zip_code": "20787070"
+            }
+        },
+        "order_date": "2025-01-10 21:09:06",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 3,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-6155260583",
+            "amount": 1500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 40.38759925603786,
+            "address": {
+                "street": "Rua de Gomes",
+                "number": "671",
+                "complement": "Apto 94",
+                "neighborhood": "Vila Madre Gertrudes 4ª Seção",
+                "city": "Aragão Verde",
+                "state": "RO",
+                "zip_code": "61626-327"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-21014",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Rebeca",
+            "last_name": "Viana",
+            "cpf": "620.475.318-53",
+            "email": "kcamara@example.com",
+            "phone": "31 2509-3914",
+            "address": {
+                "street": "Avenida Dom Costa",
+                "number": "824",
+                "complement": "Apto 79",
+                "neighborhood": "Bonfim",
+                "city": "da Conceição de Alves",
+                "state": "PE",
+                "zip_code": "54004709"
+            }
+        },
+        "order_date": "2025-01-11 10:30:12",
+        "items": [
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 2,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 4,
+                "unit_price": 1800.0
+            },
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 4,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-2329815702",
+            "amount": 9800.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 40.91831572392129,
+            "address": {
+                "street": "Distrito de Carvalho",
+                "number": "45",
+                "complement": "Apto 90",
+                "neighborhood": "Beija Flor",
+                "city": "Vasconcelos do Amparo",
+                "state": "MT",
+                "zip_code": "87159991"
+            },
+            "expected_delivery_date": "2025-01-15"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-26264",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Yasmin",
+            "last_name": "Viana",
+            "cpf": "369.158.704-66",
+            "email": "rafael12@example.com",
+            "phone": "71 4337 9202",
+            "address": {
+                "street": "Praia Benjamin Duarte",
+                "number": "221",
+                "complement": "Apto 35",
+                "neighborhood": "Vila Vista Alegre",
+                "city": "Caldeira da Praia",
+                "state": "AP",
+                "zip_code": "94991-067"
+            }
+        },
+        "order_date": "2025-01-15 15:11:57",
+        "items": [
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 4,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 5,
+                "unit_price": 2200.0
+            },
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 3,
+                "unit_price": 4000.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-8052814680",
+            "amount": 24200.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 48.168906520792504,
+            "address": {
+                "street": "Lagoa Miguel Leão",
+                "number": "556",
+                "complement": "Apto 44",
+                "neighborhood": "Apolonia",
+                "city": "Moreira de Costa",
+                "state": "PB",
+                "zip_code": "49438-869"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-56659",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Mathias",
+            "last_name": "da Rocha",
+            "cpf": "653.479.182-09",
+            "email": "tlima@example.org",
+            "phone": "(031) 2179-3155",
+            "address": {
+                "street": "Núcleo de Brito",
+                "number": "657",
+                "complement": "Apto 47",
+                "neighborhood": "Nossa Senhora Da Conceição",
+                "city": "Rezende",
+                "state": "AC",
+                "zip_code": "38647746"
+            }
+        },
+        "order_date": "2025-01-02 20:42:12",
+        "items": [
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 2,
+                "unit_price": 2200.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-4765938067",
+            "amount": 4400.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 37.919152932397715,
+            "address": {
+                "street": "Vereda Ramos",
+                "number": "950",
+                "complement": "Apto 59",
+                "neighborhood": "Cônego Pinheiro 2ª Seção",
+                "city": "Gomes",
+                "state": "RS",
+                "zip_code": "33413253"
+            },
+            "expected_delivery_date": "2025-01-03"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-78066",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Rodrigo",
+            "last_name": "Farias",
+            "cpf": "590.137.426-61",
+            "email": "mariana76@example.com",
+            "phone": "+55 (031) 4258-3526",
+            "address": {
+                "street": "Conjunto de Fernandes",
+                "number": "61",
+                "complement": "Apto 58",
+                "neighborhood": "Novo Santa Cecilia",
+                "city": "Cunha",
+                "state": "RO",
+                "zip_code": "28929-784"
+            }
+        },
+        "order_date": "2025-01-13 16:11:48",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 4,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-8935635555",
+            "amount": 2000.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 34.34018223812799,
+            "address": {
+                "street": "Trecho de da Paz",
+                "number": "26",
+                "complement": "Apto 62",
+                "neighborhood": "Esperança",
+                "city": "Pinto",
+                "state": "MT",
+                "zip_code": "61482-119"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-98251",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Pedro Lucas",
+            "last_name": "Moreira",
+            "cpf": "397.528.164-28",
+            "email": "salesmarina@example.net",
+            "phone": "31 2332-5033",
+            "address": {
+                "street": "Jardim de Viana",
+                "number": "7",
+                "complement": "Apto 63",
+                "neighborhood": "Vila Nova Cachoeirinha 2ª Seção",
+                "city": "Almeida do Galho",
+                "state": "MS",
+                "zip_code": "12568-775"
+            }
+        },
+        "order_date": "2025-01-01 18:53:44",
+        "items": [
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 1,
+                "unit_price": 4000.0
+            },
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 3,
+                "unit_price": 500.0
+            },
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 5,
+                "unit_price": 2200.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-5266188626",
+            "amount": 16500.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 18.616451119154,
+            "address": {
+                "street": "Núcleo de Gomes",
+                "number": "101",
+                "complement": "Apto 58",
+                "neighborhood": "São Francisco",
+                "city": "Carvalho do Sul",
+                "state": "RS",
+                "zip_code": "45691784"
+            },
+            "expected_delivery_date": "2025-01-15"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-5501",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Enzo",
+            "last_name": "Mendes",
+            "cpf": "098.754.236-29",
+            "email": "guerraluigi@example.net",
+            "phone": "(011) 3122 7360",
+            "address": {
+                "street": "Chácara Maria Laura Moura",
+                "number": "929",
+                "complement": "Apto 72",
+                "neighborhood": "Álvaro Camargos",
+                "city": "Camargo Verde",
+                "state": "ES",
+                "zip_code": "69199-920"
+            }
+        },
+        "order_date": "2025-01-02 09:28:37",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 1,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-2900499515",
+            "amount": 500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 17.97275563646228,
+            "address": {
+                "street": "Morro de da Paz",
+                "number": "351",
+                "complement": "Apto 66",
+                "neighborhood": "Santa Rita",
+                "city": "Mendonça",
+                "state": "MS",
+                "zip_code": "42723-329"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "AL-63818",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Maria Luiza",
+            "last_name": "Ferreira",
+            "cpf": "079.684.315-57",
+            "email": "yasmin79@example.org",
+            "phone": "0500-877-6938",
+            "address": {
+                "street": "Quadra de Machado",
+                "number": "24",
+                "complement": "Apto 32",
+                "neighborhood": "São Cristóvão",
+                "city": "Camargo de Freitas",
+                "state": "MT",
+                "zip_code": "03717999"
+            }
+        },
+        "order_date": "2025-01-04 04:58:57",
+        "items": [
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 1,
+                "unit_price": 1800.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-5411845447",
+            "amount": 1800.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 39.26596048475655,
+            "address": {
+                "street": "Loteamento Pimenta",
+                "number": "921",
+                "complement": "Apto 1",
+                "neighborhood": "Monte Azul",
+                "city": "da Rocha Paulista",
+                "state": "PB",
+                "zip_code": "28557967"
+            },
+            "expected_delivery_date": "2025-01-04"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-92698",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Joaquim",
+            "last_name": "Alves",
+            "cpf": "871.935.406-10",
+            "email": "yda-costa@example.org",
+            "phone": "(071) 8373-3362",
+            "address": {
+                "street": "Campo João Montenegro",
+                "number": "742",
+                "complement": "Apto 3",
+                "neighborhood": "Vila São Paulo",
+                "city": "Fonseca Paulista",
+                "state": "AL",
+                "zip_code": "18195-105"
+            }
+        },
+        "order_date": "2025-01-07 04:57:17",
+        "items": [
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 1,
+                "unit_price": 1800.0
+            },
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 4,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-4486073072",
+            "amount": 3800.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 48.911423764878755,
+            "address": {
+                "street": "Recanto Luiza Cassiano",
+                "number": "464",
+                "complement": "Apto 86",
+                "neighborhood": "Das Industrias I",
+                "city": "Martins do Oeste",
+                "state": "PB",
+                "zip_code": "88294-596"
+            },
+            "expected_delivery_date": "2025-01-02"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-34020",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Ana Laura",
+            "last_name": "Leão",
+            "cpf": "869.457.310-57",
+            "email": "anthony-gabrielramos@example.net",
+            "phone": "+55 51 8721 8441",
+            "address": {
+                "street": "Ladeira de Araújo",
+                "number": "915",
+                "complement": "Apto 82",
+                "neighborhood": "Conjunto Jatoba",
+                "city": "Nunes de Goiás",
+                "state": "PA",
+                "zip_code": "94632-854"
+            }
+        },
+        "order_date": "2025-01-14 16:49:50",
+        "items": [
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 1,
+                "unit_price": 4000.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-6591861854",
+            "amount": 4000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 12.591257894494099,
+            "address": {
+                "street": "Esplanada Ryan Teixeira",
+                "number": "691",
+                "complement": "Apto 99",
+                "neighborhood": "Vila Califórnia",
+                "city": "Costa da Prata",
+                "state": "PE",
+                "zip_code": "08451609"
+            },
+            "expected_delivery_date": "2025-01-13"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-77075",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Benício",
+            "last_name": "Nogueira",
+            "cpf": "730.294.618-31",
+            "email": "drocha@example.net",
+            "phone": "84 0510-7620",
+            "address": {
+                "street": "Alameda Miguel Gomes",
+                "number": "38",
+                "complement": "Apto 30",
+                "neighborhood": "Vila Madre Gertrudes 4ª Seção",
+                "city": "Montenegro",
+                "state": "AC",
+                "zip_code": "76120-832"
+            }
+        },
+        "order_date": "2025-01-02 12:01:33",
+        "items": [
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 2,
+                "unit_price": 2200.0
+            },
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 3,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-299443077",
+            "amount": 5300.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 12.410611859999769,
+            "address": {
+                "street": "Colônia Valentim Machado",
+                "number": "86",
+                "complement": "Apto 55",
+                "neighborhood": "Nossa Senhora Da Conceição",
+                "city": "Guerra Paulista",
+                "state": "RS",
+                "zip_code": "39773-023"
+            },
+            "expected_delivery_date": "2025-01-01"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-20033",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Laís",
+            "last_name": "Correia",
+            "cpf": "806.453.127-62",
+            "email": "evelyn96@example.org",
+            "phone": "+55 81 6251-1301",
+            "address": {
+                "street": "Praia Almeida",
+                "number": "836",
+                "complement": "Apto 54",
+                "neighborhood": "Caiçaras",
+                "city": "Rezende Paulista",
+                "state": "RN",
+                "zip_code": "15314-126"
+            }
+        },
+        "order_date": "2025-01-04 14:37:48",
+        "items": [
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 4,
+                "unit_price": 4000.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-9792877445",
+            "amount": 16000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 44.717871797479646,
+            "address": {
+                "street": "Travessa Nogueira",
+                "number": "957",
+                "complement": "Apto 98",
+                "neighborhood": "Pousada Santo Antonio",
+                "city": "Nunes",
+                "state": "PI",
+                "zip_code": "20782610"
+            },
+            "expected_delivery_date": "2025-01-09"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "AL-46917",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Ryan",
+            "last_name": "Fernandes",
+            "cpf": "403.918.526-98",
+            "email": "ecardoso@example.org",
+            "phone": "(084) 3737-5020",
+            "address": {
+                "street": "Largo Kevin Albuquerque",
+                "number": "748",
+                "complement": "Apto 95",
+                "neighborhood": "Conjunto São Francisco De Assis",
+                "city": "Novaes Verde",
+                "state": "PA",
+                "zip_code": "00691065"
+            }
+        },
+        "order_date": "2025-01-02 01:21:09",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 4,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-1828791151",
+            "amount": 2000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 20.83411287700362,
+            "address": {
+                "street": "Loteamento Borges",
+                "number": "581",
+                "complement": "Apto 32",
+                "neighborhood": "Vila Copacabana",
+                "city": "Pereira",
+                "state": "ES",
+                "zip_code": "74332194"
+            },
+            "expected_delivery_date": "2025-01-11"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "AL-91080",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Bella",
+            "last_name": "Melo",
+            "cpf": "864.539.710-20",
+            "email": "bfernandes@example.com",
+            "phone": "41 0712 6757",
+            "address": {
+                "street": "Morro Lopes",
+                "number": "812",
+                "complement": "Apto 35",
+                "neighborhood": "Vila São Francisco",
+                "city": "Moreira do Oeste",
+                "state": "AM",
+                "zip_code": "41980-397"
+            }
+        },
+        "order_date": "2025-01-09 05:32:18",
+        "items": [
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 1,
+                "unit_price": 1800.0
+            },
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 3,
+                "unit_price": 2200.0
+            },
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 4,
+                "unit_price": 4000.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-8058249736",
+            "amount": 24400.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 14.98120169401972,
+            "address": {
+                "street": "Feira de Rezende",
+                "number": "228",
+                "complement": "Apto 88",
+                "neighborhood": "Nossa Senhora Da Conceição",
+                "city": "Pimenta",
+                "state": "MS",
+                "zip_code": "47044998"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-16359",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Lorenzo",
+            "last_name": "Abreu",
+            "cpf": "529.083.764-74",
+            "email": "pedrorios@example.com",
+            "phone": "84 7238 2190",
+            "address": {
+                "street": "Travessa Sales",
+                "number": "314",
+                "complement": "Apto 32",
+                "neighborhood": "Santa Cruz",
+                "city": "Moreira do Galho",
+                "state": "PI",
+                "zip_code": "34592756"
+            }
+        },
+        "order_date": "2025-01-13 17:58:31",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 1,
+                "unit_price": 500.0
+            },
+            {
+                "product_id": "AT-003",
+                "description": "Serra Circular",
+                "quantity": 2,
+                "unit_price": 2200.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-5665598804",
+            "amount": 4900.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 29.33290824212225,
+            "address": {
+                "street": "Praia Cirino",
+                "number": "27",
+                "complement": "Apto 80",
+                "neighborhood": "Boa Vista",
+                "city": "Castro",
+                "state": "PE",
+                "zip_code": "72990-857"
+            },
+            "expected_delivery_date": "2025-01-09"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "AL-95601",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Manuela",
+            "last_name": "Rios",
+            "cpf": "503.691.278-03",
+            "email": "psantos@example.org",
+            "phone": "71 9157 0140",
+            "address": {
+                "street": "Campo Rafael Duarte",
+                "number": "8",
+                "complement": "Apto 48",
+                "neighborhood": "Vila Nova Cachoeirinha 3ª Seção",
+                "city": "Camargo",
+                "state": "PI",
+                "zip_code": "18851686"
+            }
+        },
+        "order_date": "2025-01-07 12:59:04",
+        "items": [
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 3,
+                "unit_price": 500.0
+            },
+            {
+                "product_id": "AT-005",
+                "description": "Compressor de Ar",
+                "quantity": 5,
+                "unit_price": 4000.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-7377323178",
+            "amount": 21500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 44.90693994480628,
+            "address": {
+                "street": "Estação de Silva",
+                "number": "954",
+                "complement": "Apto 85",
+                "neighborhood": "Vila Real 2ª Seção",
+                "city": "Cassiano da Mata",
+                "state": "PI",
+                "zip_code": "30740-526"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-58999",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Benjamin",
+            "last_name": "Peixoto",
+            "cpf": "438.705.612-62",
+            "email": "fernando60@example.net",
+            "phone": "+55 51 1295 3584",
+            "address": {
+                "street": "Feira Maria Luísa Moura",
+                "number": "367",
+                "complement": "Apto 64",
+                "neighborhood": "Vera Cruz",
+                "city": "Fernandes do Norte",
+                "state": "RO",
+                "zip_code": "20230-707"
+            }
+        },
+        "order_date": "2025-01-08 06:25:39",
+        "items": [
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 3,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 2,
+                "unit_price": 1800.0
+            },
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 2,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-4737001469",
+            "amount": 5500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 30.497128641508052,
+            "address": {
+                "street": "Praça Sales",
+                "number": "24",
+                "complement": "Apto 100",
+                "neighborhood": "Etelvina Carneiro",
+                "city": "Jesus",
+                "state": "MT",
+                "zip_code": "39470385"
+            },
+            "expected_delivery_date": "2025-01-11"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "AL-6457",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Davi Lucca",
+            "last_name": "da Rosa",
+            "cpf": "194.523.768-64",
+            "email": "nataliagarcia@example.net",
+            "phone": "41 5915-4699",
+            "address": {
+                "street": "Trevo Antony Pastor",
+                "number": "915",
+                "complement": "Apto 4",
+                "neighborhood": "Vila Formosa",
+                "city": "Vasconcelos",
+                "state": "ES",
+                "zip_code": "43852249"
+            }
+        },
+        "order_date": "2025-01-13 17:24:40",
+        "items": [
+            {
+                "product_id": "AT-002",
+                "description": "Furadeira Industrial",
+                "quantity": 5,
+                "unit_price": 1800.0
+            },
+            {
+                "product_id": "AT-001",
+                "description": "Parafusadeira Elétrica",
+                "quantity": 2,
+                "unit_price": 500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-825313852",
+            "amount": 10000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 49.503739533476356,
+            "address": {
+                "street": "Colônia de Gomes",
+                "number": "483",
+                "complement": "Apto 78",
+                "neighborhood": "Antonio Ribeiro De Abreu 1ª Seção",
+                "city": "Abreu do Galho",
+                "state": "AM",
+                "zip_code": "44791121"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "AL-11010",
+        "company": {
+            "name": "Alpha Tools SA",
+            "cnpj": "33.333.333/0001-33"
+        },
+        "customer": {
+            "first_name": "Ana Beatriz",
+            "last_name": "Barros",
+            "cpf": "179.243.685-82",
+            "email": "fernando31@example.net",
+            "phone": "(061) 1529 9666",
+            "address": {
+                "street": "Ladeira Manuela Gonçalves",
+                "number": "514",
+                "complement": "Apto 75",
+                "neighborhood": "Itapoa",
+                "city": "Mendes de Vargas",
+                "state": "PB",
+                "zip_code": "04660518"
+            }
+        },
+        "order_date": "2025-01-10 04:47:12",
+        "items": [
+            {
+                "product_id": "AT-004",
+                "description": "Jogo de Chaves",
+                "quantity": 5,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-2148866347",
+            "amount": 1500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 46.17041318863259,
+            "address": {
+                "street": "Praça Pacheco",
+                "number": "921",
+                "complement": "Apto 58",
+                "neighborhood": "Nova Vista",
+                "city": "Santos Grande",
+                "state": "RN",
+                "zip_code": "74460402"
+            },
+            "expected_delivery_date": "2025-01-06"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    }
+]

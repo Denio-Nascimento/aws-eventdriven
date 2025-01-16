@@ -1,0 +1,1489 @@
+[
+    {
+        "order_id": "TE-27194",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Heloísa",
+            "last_name": "Cunha",
+            "cpf": "647.218.930-78",
+            "email": "das-nevesdavi@example.net",
+            "phone": "31 5252 7220",
+            "address": {
+                "street": "Colônia Luiz Henrique Costela",
+                "number": "523",
+                "complement": "Apto 94",
+                "neighborhood": "Nova Gameleira",
+                "city": "Porto do Oeste",
+                "state": "RN",
+                "zip_code": "23460-818"
+            }
+        },
+        "order_date": "2025-01-11 22:40:10",
+        "items": [
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 5,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-3442379944",
+            "amount": 10000.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 14.97580526112877,
+            "address": {
+                "street": "Largo de Mendes",
+                "number": "320",
+                "complement": "Apto 25",
+                "neighborhood": "Tupi A",
+                "city": "Ferreira do Oeste",
+                "state": "MA",
+                "zip_code": "57603758"
+            },
+            "expected_delivery_date": "2025-01-13"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-76740",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Mariane",
+            "last_name": "Viana",
+            "cpf": "831.456.902-05",
+            "email": "correiaolivia@example.com",
+            "phone": "+55 (081) 8929 3408",
+            "address": {
+                "street": "Rodovia Larissa Correia",
+                "number": "865",
+                "complement": "Apto 88",
+                "neighborhood": "Vila São Rafael",
+                "city": "Rodrigues",
+                "state": "ES",
+                "zip_code": "48533355"
+            }
+        },
+        "order_date": "2025-01-02 18:53:58",
+        "items": [
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 5,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 3,
+                "unit_price": 2500.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-2907848889",
+            "amount": 9000.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 49.03919140162999,
+            "address": {
+                "street": "Colônia Nina Costela",
+                "number": "83",
+                "complement": "Apto 36",
+                "neighborhood": "Coração De Jesus",
+                "city": "Pinto de Minas",
+                "state": "AC",
+                "zip_code": "13733028"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-56204",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Rebeca",
+            "last_name": "Lima",
+            "cpf": "367.184.590-20",
+            "email": "yrezende@example.org",
+            "phone": "61 7607-1521",
+            "address": {
+                "street": "Pátio Joaquim Teixeira",
+                "number": "148",
+                "complement": "Apto 13",
+                "neighborhood": "Biquinhas",
+                "city": "Martins das Pedras",
+                "state": "PE",
+                "zip_code": "38037-681"
+            }
+        },
+        "order_date": "2025-01-05 20:39:46",
+        "items": [
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 4,
+                "unit_price": 2500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-2884919738",
+            "amount": 10000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 31.736802689996747,
+            "address": {
+                "street": "Via de das Neves",
+                "number": "79",
+                "complement": "Apto 83",
+                "neighborhood": "Vila Coqueiral",
+                "city": "Barbosa de Barbosa",
+                "state": "GO",
+                "zip_code": "00811854"
+            },
+            "expected_delivery_date": "2025-01-11"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-20142",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Alice",
+            "last_name": "Fogaça",
+            "cpf": "583.724.069-10",
+            "email": "ramosliz@example.net",
+            "phone": "(041) 3969 7667",
+            "address": {
+                "street": "Estação Abreu",
+                "number": "293",
+                "complement": "Apto 83",
+                "neighborhood": "Vila Sesc",
+                "city": "Cardoso",
+                "state": "RN",
+                "zip_code": "06169-016"
+            }
+        },
+        "order_date": "2025-01-11 19:39:10",
+        "items": [
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 5,
+                "unit_price": 700.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-1492382382",
+            "amount": 3500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 32.97263329278327,
+            "address": {
+                "street": "Área de Nunes",
+                "number": "531",
+                "complement": "Apto 24",
+                "neighborhood": "Vila São Geraldo",
+                "city": "Peixoto do Norte",
+                "state": "RJ",
+                "zip_code": "38107-744"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-98427",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Ana",
+            "last_name": "Gonçalves",
+            "cpf": "570.923.648-92",
+            "email": "alicemonteiro@example.net",
+            "phone": "+55 (021) 4733 6934",
+            "address": {
+                "street": "Trecho Mathias Castro",
+                "number": "15",
+                "complement": "Apto 59",
+                "neighborhood": "Cinquentenário",
+                "city": "Oliveira do Galho",
+                "state": "AC",
+                "zip_code": "27550783"
+            }
+        },
+        "order_date": "2025-01-15 19:01:44",
+        "items": [
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 5,
+                "unit_price": 4500.0
+            },
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 4,
+                "unit_price": 700.0
+            },
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 4,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-9771457223",
+            "amount": 33300.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 40.432912069239464,
+            "address": {
+                "street": "Esplanada Silveira",
+                "number": "1",
+                "complement": "Apto 52",
+                "neighborhood": "Vila Nova Paraíso",
+                "city": "Mendes das Flores",
+                "state": "SE",
+                "zip_code": "99592805"
+            },
+            "expected_delivery_date": "2025-01-02"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-40256",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Enzo",
+            "last_name": "Cardoso",
+            "cpf": "756.130.289-40",
+            "email": "pereiraantonella@example.net",
+            "phone": "(011) 3021 0593",
+            "address": {
+                "street": "Morro Cavalcanti",
+                "number": "60",
+                "complement": "Apto 59",
+                "neighborhood": "Padre Eustáquio",
+                "city": "da Costa das Flores",
+                "state": "MG",
+                "zip_code": "50170-179"
+            }
+        },
+        "order_date": "2025-01-10 12:49:08",
+        "items": [
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 2,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 1,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-7066420613",
+            "amount": 2600.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 13.922914499857214,
+            "address": {
+                "street": "Pátio Isaac Porto",
+                "number": "900",
+                "complement": "Apto 10",
+                "neighborhood": "Santa Cecilia",
+                "city": "Souza",
+                "state": "SC",
+                "zip_code": "55270212"
+            },
+            "expected_delivery_date": "2025-01-11"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-51250",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Ayla",
+            "last_name": "Carvalho",
+            "cpf": "217.689.453-73",
+            "email": "scunha@example.org",
+            "phone": "0500-015-9089",
+            "address": {
+                "street": "Lagoa de Barbosa",
+                "number": "538",
+                "complement": "Apto 61",
+                "neighborhood": "Barreiro",
+                "city": "Pinto do Oeste",
+                "state": "ES",
+                "zip_code": "26514643"
+            }
+        },
+        "order_date": "2025-01-05 21:41:36",
+        "items": [
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 2,
+                "unit_price": 2000.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 3,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-8429893019",
+            "amount": 4900.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 17.874238837713257,
+            "address": {
+                "street": "Feira de Freitas",
+                "number": "183",
+                "complement": "Apto 58",
+                "neighborhood": "Ermelinda",
+                "city": "Monteiro das Flores",
+                "state": "PR",
+                "zip_code": "32455984"
+            },
+            "expected_delivery_date": "2025-01-01"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-61702",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "João Lucas",
+            "last_name": "Rocha",
+            "cpf": "687.519.243-82",
+            "email": "alexandrecamargo@example.org",
+            "phone": "(041) 4221-9225",
+            "address": {
+                "street": "Vereda Sabrina Cardoso",
+                "number": "432",
+                "complement": "Apto 19",
+                "neighborhood": "Cardoso",
+                "city": "Campos de Freitas",
+                "state": "PI",
+                "zip_code": "58148079"
+            }
+        },
+        "order_date": "2025-01-13 10:34:28",
+        "items": [
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 3,
+                "unit_price": 700.0
+            },
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 2,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 2,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-1368489823",
+            "amount": 7700.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 30.136949432459986,
+            "address": {
+                "street": "Residencial Mendonça",
+                "number": "834",
+                "complement": "Apto 16",
+                "neighborhood": "Santa Rosa",
+                "city": "Rezende do Oeste",
+                "state": "DF",
+                "zip_code": "39695663"
+            },
+            "expected_delivery_date": "2025-01-01"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-96694",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Ana Beatriz",
+            "last_name": "Martins",
+            "cpf": "345.871.026-44",
+            "email": "joao-lucassilva@example.net",
+            "phone": "+55 (041) 8925-1826",
+            "address": {
+                "street": "Esplanada Lima",
+                "number": "863",
+                "complement": "Apto 20",
+                "neighborhood": "Vila Da Paz",
+                "city": "Almeida",
+                "state": "PA",
+                "zip_code": "82285311"
+            }
+        },
+        "order_date": "2025-01-12 14:46:25",
+        "items": [
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 1,
+                "unit_price": 4500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 2,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 3,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-9076814973",
+            "amount": 11100.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 16.498510005908553,
+            "address": {
+                "street": "Sítio de Silveira",
+                "number": "834",
+                "complement": "Apto 84",
+                "neighborhood": "Belmonte",
+                "city": "Nunes",
+                "state": "AC",
+                "zip_code": "99383473"
+            },
+            "expected_delivery_date": "2025-01-08"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-15725",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Bryan",
+            "last_name": "Cunha",
+            "cpf": "135.084.796-84",
+            "email": "hdias@example.com",
+            "phone": "0800 272 0925",
+            "address": {
+                "street": "Rodovia Ana Vitória da Paz",
+                "number": "72",
+                "complement": "Apto 36",
+                "neighborhood": "Solar Do Barreiro",
+                "city": "Silva do Amparo",
+                "state": "RJ",
+                "zip_code": "64662-116"
+            }
+        },
+        "order_date": "2025-01-14 08:52:51",
+        "items": [
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 1,
+                "unit_price": 4500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 4,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-4568850461",
+            "amount": 5700.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 35.53895384215484,
+            "address": {
+                "street": "Travessa Barros",
+                "number": "479",
+                "complement": "Apto 70",
+                "neighborhood": "Barão Homem De Melo 2ª Seção",
+                "city": "Sousa",
+                "state": "MS",
+                "zip_code": "81513919"
+            },
+            "expected_delivery_date": "2025-01-01"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-41350",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Vitor Gabriel",
+            "last_name": "Brito",
+            "cpf": "385.729.461-28",
+            "email": "mrodrigues@example.net",
+            "phone": "21 2976 6534",
+            "address": {
+                "street": "Setor Cavalcanti",
+                "number": "541",
+                "complement": "Apto 78",
+                "neighborhood": "Barro Preto",
+                "city": "Leão de Moraes",
+                "state": "PB",
+                "zip_code": "18778-159"
+            }
+        },
+        "order_date": "2025-01-07 04:04:10",
+        "items": [
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 3,
+                "unit_price": 700.0
+            },
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 3,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 1,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-7820582549",
+            "amount": 9900.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 43.131475601080844,
+            "address": {
+                "street": "Estação Luiz Miguel Duarte",
+                "number": "988",
+                "complement": "Apto 25",
+                "neighborhood": "Rio Branco",
+                "city": "Freitas",
+                "state": "RO",
+                "zip_code": "13771828"
+            },
+            "expected_delivery_date": "2025-01-04"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-15711",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Gustavo Henrique",
+            "last_name": "Novaes",
+            "cpf": "091.687.354-48",
+            "email": "riosjoao@example.com",
+            "phone": "+55 (011) 4780 1299",
+            "address": {
+                "street": "Colônia Jesus",
+                "number": "753",
+                "complement": "Apto 48",
+                "neighborhood": "Cruzeiro",
+                "city": "da Rocha de Cunha",
+                "state": "PI",
+                "zip_code": "45283-775"
+            }
+        },
+        "order_date": "2025-01-01 05:01:39",
+        "items": [
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 4,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 2,
+                "unit_price": 2000.0
+            },
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 5,
+                "unit_price": 700.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-5782266242",
+            "amount": 8700.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 44.070585859023176,
+            "address": {
+                "street": "Residencial da Costa",
+                "number": "220",
+                "complement": "Apto 97",
+                "neighborhood": "Xangri-Lá",
+                "city": "Lopes de Vasconcelos",
+                "state": "SE",
+                "zip_code": "24976378"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-10737",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Luiz Fernando",
+            "last_name": "Fogaça",
+            "cpf": "140.873.652-71",
+            "email": "ncorreia@example.net",
+            "phone": "31 6944 9586",
+            "address": {
+                "street": "Aeroporto Valentim da Rocha",
+                "number": "182",
+                "complement": "Apto 4",
+                "neighborhood": "Vila Da Ária",
+                "city": "Pereira da Prata",
+                "state": "RN",
+                "zip_code": "92950-554"
+            }
+        },
+        "order_date": "2025-01-01 05:56:44",
+        "items": [
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 3,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-5093295489",
+            "amount": 6000.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 15.601275661035189,
+            "address": {
+                "street": "Colônia Vitor Gabriel Fonseca",
+                "number": "684",
+                "complement": "Apto 72",
+                "neighborhood": "Camargos",
+                "city": "Novaes",
+                "state": "PB",
+                "zip_code": "19071816"
+            },
+            "expected_delivery_date": "2025-01-13"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-19462",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Gabriela",
+            "last_name": "Barbosa",
+            "cpf": "864.372.901-96",
+            "email": "alexia59@example.org",
+            "phone": "0300 214 5692",
+            "address": {
+                "street": "Loteamento de Montenegro",
+                "number": "140",
+                "complement": "Apto 51",
+                "neighborhood": "Vila Sumaré",
+                "city": "Melo",
+                "state": "CE",
+                "zip_code": "97459-066"
+            }
+        },
+        "order_date": "2025-01-14 06:57:21",
+        "items": [
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 3,
+                "unit_price": 4500.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-8359688049",
+            "amount": 13500.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 17.30516441799242,
+            "address": {
+                "street": "Fazenda Gabrielly Cirino",
+                "number": "88",
+                "complement": "Apto 48",
+                "neighborhood": "Vila Nossa Senhora Do Rosário",
+                "city": "Nogueira",
+                "state": "PE",
+                "zip_code": "96617-911"
+            },
+            "expected_delivery_date": "2025-01-06"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-63157",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Alexandre",
+            "last_name": "Mendonça",
+            "cpf": "867.923.450-83",
+            "email": "zvasconcelos@example.org",
+            "phone": "0900-636-7482",
+            "address": {
+                "street": "Vila Freitas",
+                "number": "234",
+                "complement": "Apto 54",
+                "neighborhood": "Heliopolis",
+                "city": "Albuquerque de Cavalcanti",
+                "state": "PE",
+                "zip_code": "93425-385"
+            }
+        },
+        "order_date": "2025-01-08 17:23:50",
+        "items": [
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 4,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 4,
+                "unit_price": 4500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-8040767657",
+            "amount": 28000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 15.899950076222966,
+            "address": {
+                "street": "Conjunto Campos",
+                "number": "918",
+                "complement": "Apto 18",
+                "neighborhood": "Cidade Nova",
+                "city": "Fogaça",
+                "state": "AL",
+                "zip_code": "91799-896"
+            },
+            "expected_delivery_date": "2025-01-05"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-74930",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Alexia",
+            "last_name": "Cirino",
+            "cpf": "370.546.189-39",
+            "email": "mathiascassiano@example.org",
+            "phone": "(061) 5774-1470",
+            "address": {
+                "street": "Trecho Theo Pires",
+                "number": "886",
+                "complement": "Apto 13",
+                "neighborhood": "Vila Santo Antônio",
+                "city": "Garcia do Galho",
+                "state": "SC",
+                "zip_code": "65691-665"
+            }
+        },
+        "order_date": "2025-01-15 09:57:28",
+        "items": [
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 1,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-8464650723",
+            "amount": 2000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 38.55196628747525,
+            "address": {
+                "street": "Campo Maria Cecília Azevedo",
+                "number": "514",
+                "complement": "Apto 70",
+                "neighborhood": "Mineirão",
+                "city": "Gomes de Machado",
+                "state": "MS",
+                "zip_code": "59318800"
+            },
+            "expected_delivery_date": "2025-01-10"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-48409",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Miguel",
+            "last_name": "Moraes",
+            "cpf": "462.875.103-07",
+            "email": "aparecidaamanda@example.net",
+            "phone": "+55 11 3644-1493",
+            "address": {
+                "street": "Lago de Pires",
+                "number": "437",
+                "complement": "Apto 13",
+                "neighborhood": "Vila Paris",
+                "city": "Novaes Grande",
+                "state": "PB",
+                "zip_code": "94904011"
+            }
+        },
+        "order_date": "2025-01-09 13:39:21",
+        "items": [
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 2,
+                "unit_price": 700.0
+            },
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 4,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-1160243768",
+            "amount": 9400.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 40.14618175208744,
+            "address": {
+                "street": "Ladeira da Rosa",
+                "number": "152",
+                "complement": "Apto 28",
+                "neighborhood": "Ipiranga",
+                "city": "Silveira",
+                "state": "BA",
+                "zip_code": "23235887"
+            },
+            "expected_delivery_date": "2025-01-06"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-94267",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Dom",
+            "last_name": "Farias",
+            "cpf": "753.680.429-65",
+            "email": "rafael78@example.org",
+            "phone": "+55 (041) 5843-0090",
+            "address": {
+                "street": "Estrada de Correia",
+                "number": "369",
+                "complement": "Apto 84",
+                "neighborhood": "Jaqueline",
+                "city": "da Cruz",
+                "state": "PR",
+                "zip_code": "29657-691"
+            }
+        },
+        "order_date": "2025-01-04 19:51:23",
+        "items": [
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 4,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 2,
+                "unit_price": 4500.0
+            },
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 4,
+                "unit_price": 2000.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-211440845",
+            "amount": 27000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 29.938590538774015,
+            "address": {
+                "street": "Vila de da Cruz",
+                "number": "245",
+                "complement": "Apto 59",
+                "neighborhood": "Vila Esplanada",
+                "city": "Silva",
+                "state": "SC",
+                "zip_code": "13060-874"
+            },
+            "expected_delivery_date": "2025-01-08"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    },
+    {
+        "order_id": "TE-70159",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Maria Laura",
+            "last_name": "Siqueira",
+            "cpf": "423.981.756-00",
+            "email": "enogueira@example.net",
+            "phone": "31 8917 4802",
+            "address": {
+                "street": "Avenida Câmara",
+                "number": "811",
+                "complement": "Apto 83",
+                "neighborhood": "São Cristóvão",
+                "city": "Gomes",
+                "state": "GO",
+                "zip_code": "58656677"
+            }
+        },
+        "order_date": "2025-01-05 19:29:19",
+        "items": [
+            {
+                "product_id": "TS-005",
+                "description": "Monitor Curvo",
+                "quantity": 1,
+                "unit_price": 2000.0
+            },
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 1,
+                "unit_price": 700.0
+            },
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 3,
+                "unit_price": 2500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-3424744793",
+            "amount": 10200.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 17.684577076427104,
+            "address": {
+                "street": "Distrito de da Rosa",
+                "number": "391",
+                "complement": "Apto 30",
+                "neighborhood": "Boa Vista",
+                "city": "da Rosa da Praia",
+                "state": "RR",
+                "zip_code": "95728-188"
+            },
+            "expected_delivery_date": "2025-01-07"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-93206",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Olivia",
+            "last_name": "Cavalcanti",
+            "cpf": "293.516.470-99",
+            "email": "stellagarcia@example.com",
+            "phone": "+55 61 4462 7355",
+            "address": {
+                "street": "Pátio Moreira",
+                "number": "848",
+                "complement": "Apto 77",
+                "neighborhood": "Maria Tereza",
+                "city": "Albuquerque dos Dourados",
+                "state": "CE",
+                "zip_code": "30408985"
+            }
+        },
+        "order_date": "2025-01-05 23:01:24",
+        "items": [
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 4,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 3,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 5,
+                "unit_price": 4500.0
+            }
+        ],
+        "payment": {
+            "method": "Pix",
+            "transaction_id": "TXN-2267325981",
+            "amount": 33400.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 12.42136772245425,
+            "address": {
+                "street": "Via de Camargo",
+                "number": "359",
+                "complement": "Apto 3",
+                "neighborhood": "Aguas Claras",
+                "city": "Pimenta",
+                "state": "PR",
+                "zip_code": "73927613"
+            },
+            "expected_delivery_date": "2025-01-04"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-65624",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Ágatha",
+            "last_name": "Sampaio",
+            "cpf": "630.241.897-69",
+            "email": "lucas-gabriel82@example.net",
+            "phone": "84 8144 7800",
+            "address": {
+                "street": "Rodovia Gomes",
+                "number": "525",
+                "complement": "Apto 44",
+                "neighborhood": "Vila União",
+                "city": "Porto de Silveira",
+                "state": "TO",
+                "zip_code": "17681565"
+            }
+        },
+        "order_date": "2025-01-14 22:00:54",
+        "items": [
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 5,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 2,
+                "unit_price": 300.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-7017660576",
+            "amount": 13100.0
+        },
+        "shipping": {
+            "method": "Padrão",
+            "cost": 36.84975462139079,
+            "address": {
+                "street": "Esplanada Melo",
+                "number": "588",
+                "complement": "Apto 98",
+                "neighborhood": "Flamengo",
+                "city": "da Mota do Norte",
+                "state": "SC",
+                "zip_code": "29045265"
+            },
+            "expected_delivery_date": "2025-01-01"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-85718",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Vicente",
+            "last_name": "Ribeiro",
+            "cpf": "267.934.801-03",
+            "email": "yan37@example.net",
+            "phone": "51 4077 1367",
+            "address": {
+                "street": "Loteamento de Gonçalves",
+                "number": "947",
+                "complement": "Apto 46",
+                "neighborhood": "Lourdes",
+                "city": "Rodrigues",
+                "state": "MG",
+                "zip_code": "47237055"
+            }
+        },
+        "order_date": "2025-01-08 14:07:15",
+        "items": [
+            {
+                "product_id": "TS-001",
+                "description": "Smartphone XYZ",
+                "quantity": 3,
+                "unit_price": 2500.0
+            },
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 3,
+                "unit_price": 4500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-9146346224",
+            "amount": 21000.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 46.263780473675496,
+            "address": {
+                "street": "Loteamento Casa Grande",
+                "number": "257",
+                "complement": "Apto 76",
+                "neighborhood": "Marajó",
+                "city": "Campos de Almeida",
+                "state": "MG",
+                "zip_code": "18557545"
+            },
+            "expected_delivery_date": "2025-01-09"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-19818",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Gael Henrique",
+            "last_name": "Fogaça",
+            "cpf": "029.581.476-49",
+            "email": "jalves@example.com",
+            "phone": "71 4997 6174",
+            "address": {
+                "street": "Vereda de Porto",
+                "number": "498",
+                "complement": "Apto 14",
+                "neighborhood": "São José",
+                "city": "Ribeiro",
+                "state": "MA",
+                "zip_code": "46457294"
+            }
+        },
+        "order_date": "2025-01-06 16:52:48",
+        "items": [
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 1,
+                "unit_price": 700.0
+            },
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 2,
+                "unit_price": 4500.0
+            }
+        ],
+        "payment": {
+            "method": "Boleto",
+            "transaction_id": "TXN-6389426557",
+            "amount": 9700.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 17.53861897465835,
+            "address": {
+                "street": "Vale de Rezende",
+                "number": "68",
+                "complement": "Apto 40",
+                "neighborhood": "Diamante",
+                "city": "Rodrigues do Campo",
+                "state": "MG",
+                "zip_code": "40734-501"
+            },
+            "expected_delivery_date": "2025-01-14"
+        },
+        "order_status": "Pendente",
+        "notes": "Entregar no período da tarde."
+    },
+    {
+        "order_id": "TE-82174",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Carolina",
+            "last_name": "Sampaio",
+            "cpf": "631.759.248-91",
+            "email": "nascimentoluara@example.net",
+            "phone": "(021) 3713 9007",
+            "address": {
+                "street": "Viela de Marques",
+                "number": "499",
+                "complement": "Apto 100",
+                "neighborhood": "Vila Nossa Senhora Do Rosário",
+                "city": "Vieira de Goiás",
+                "state": "AM",
+                "zip_code": "83739223"
+            }
+        },
+        "order_date": "2025-01-14 19:39:13",
+        "items": [
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 2,
+                "unit_price": 700.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-6190709644",
+            "amount": 1400.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 26.40573249645508,
+            "address": {
+                "street": "Parque de Cassiano",
+                "number": "442",
+                "complement": "Apto 70",
+                "neighborhood": "Jardinópolis",
+                "city": "Araújo",
+                "state": "PI",
+                "zip_code": "50278-245"
+            },
+            "expected_delivery_date": "2025-01-12"
+        },
+        "order_status": "Pendente",
+        "notes": "Sem observações."
+    },
+    {
+        "order_id": "TE-32298",
+        "company": {
+            "name": "Tech Solutions Ltda",
+            "cnpj": "11.111.111/0001-11"
+        },
+        "customer": {
+            "first_name": "Maria Isis",
+            "last_name": "Lima",
+            "cpf": "529.378.140-50",
+            "email": "sousaolivia@example.com",
+            "phone": "+55 (071) 5195 8098",
+            "address": {
+                "street": "Setor Leonardo Fonseca",
+                "number": "204",
+                "complement": "Apto 79",
+                "neighborhood": "Bernadete",
+                "city": "Viana do Campo",
+                "state": "GO",
+                "zip_code": "53602-647"
+            }
+        },
+        "order_date": "2025-01-08 05:24:03",
+        "items": [
+            {
+                "product_id": "TS-002",
+                "description": "Notebook Z",
+                "quantity": 3,
+                "unit_price": 4500.0
+            },
+            {
+                "product_id": "TS-003",
+                "description": "Fone de Ouvido Bluetooth",
+                "quantity": 3,
+                "unit_price": 300.0
+            },
+            {
+                "product_id": "TS-004",
+                "description": "Teclado Mecânico",
+                "quantity": 3,
+                "unit_price": 700.0
+            }
+        ],
+        "payment": {
+            "method": "Cartão de Crédito",
+            "transaction_id": "TXN-1646938966",
+            "amount": 16500.0
+        },
+        "shipping": {
+            "method": "Express",
+            "cost": 22.816390353316883,
+            "address": {
+                "street": "Chácara Marina Farias",
+                "number": "715",
+                "complement": "Apto 13",
+                "neighborhood": "União",
+                "city": "Camargo do Galho",
+                "state": "SC",
+                "zip_code": "42904270"
+            },
+            "expected_delivery_date": "2025-01-03"
+        },
+        "order_status": "Pendente",
+        "notes": "Cliente pediu urgência."
+    }
+]
