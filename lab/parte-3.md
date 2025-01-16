@@ -3,7 +3,7 @@ Esta etapa ensinará como configurar um API Gateway para receber pedidos via req
 
 ---
 
-![Arquitetura Lab1](../imagens/arquiteturas/arquitetura-parte_3.png)
+![Arquitetura Lab3](../imagens/arquiteturas/arquitetura-parte_3.png)
 
 ## **O que Você Irá Aprender nesta atividade**
 
