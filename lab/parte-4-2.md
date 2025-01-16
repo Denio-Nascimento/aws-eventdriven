@@ -16,7 +16,7 @@ A tabela será estruturada da seguinte forma:
 
 | **PK**                          | **SK**                  | **GSI2#PK**               | **GSI2#SK**                                         |
 |----------------------------------|-------------------------|--------------------------|---------------------------------------------------|
-| COMPANY#<CNPJ>#ORDER#<order_id>  | STATUS#<order_status>   |                          |                                                   |
+| COMPANY#<CNPJ_>#ORDER#<order_id>  | STATUS#<order_status>   |                          |                                                   |
 |                                  | ITEM#<product_id>       | ITEMSTATUS#<item_status> | COMPANY#<cnpj>#ORDER#<order_id>#ITEM#<product_id> |
 |                                  | CUSTOMER#<cpf>          |                          |                                                   |
 |                                  | META#<cnpj>             |                          |                                                   |
