@@ -2,6 +2,9 @@
 
 Bem-vindo(a) à **quarta e última parte** do laboratório sobre **Arquitetura Event Driven** para **processar pedidos** na AWS. Aqui, vamos **finalizar** o fluxo, criando **três funções Lambda** que vão **operar** (inserir, alterar ou cancelar) os pedidos no DynamoDB, consumindo mensagens de **três filas SQS FIFO** distintas, roteadas pelo EventBridge.
 
+--
+![Arquitetura Lab4](../imagens/arquiteturas/arquitetura-parte_4.png)
+
 > **Objetivo**  
 > - Consumir mensagens das filas SQS `sqs-pedido-pendente.fifo`, `sqs-pedido-alterado.fifo` e `sqs-pedido-cancelado.fifo`.  
 > - Executar a **lógica** correspondente: inserir/criar, alterar e cancelar pedidos em uma **Single Table** DynamoDB.  
@@ -9,6 +12,8 @@ Bem-vindo(a) à **quarta e última parte** do laboratório sobre **Arquitetura E
 > - Adotar o **princípio de menor privilégio** nas **IAM Policies**.
 
 ---
+
+
 
 ## **Estrutura da Tabela DynamoDB**
 
