@@ -333,7 +333,7 @@ Para que a Lambda possa receber mensagens da fila, ela normalmente só precisa d
     {
       "Effect": "Allow",
       "Action": "sns:Publish",
-      "Resource": "arn:aws:sns:<YOUR_REGION>:<YOUR_ACCOUNT_ID>:sns-notificacoes-erros"
+      "Resource": "arn:aws:sns:YOUR_REGION:YOUR_ACCOUNT_ID:sns-notificacoes-erros"
     }
   ]
 }
