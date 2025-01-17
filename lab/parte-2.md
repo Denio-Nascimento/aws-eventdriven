@@ -518,25 +518,24 @@ Para testar sua **Lambda** de forma isolada:
 2. Clique em **Test** no topo.
 3. Clique em **Configure test event** e insira um JSON que simule uma mensagem SQS:
    ```json
-{
-  "Records": [
     {
-      "messageId": "11111111-aaaa-bbbb-cccc-111111111111",
-      "receiptHandle": "SomeReceiptHandle1",
-      "body": "{\"order_id\":\"AL-719\",\"customer\":{\"first_name\":\"Henry\",\"last_name\":\"Costela\",\"cpf\":\"380.412.796-78\",\"email\":\"vitor77@example.org\",\"phone\":\"+55 21 6012-1552\"},\"items\":[{\"product_id\":\"AT-005\",\"description\":\"Compressor de Ar\",\"quantity\":2,\"unit_price\":4000.0}],\"payment\":{\"method\":\"Cartão de Crédito\",\"transaction_id\":\"TXN-5608451249\",\"amount\":8000.0},\"company\":{\"name\":\"Alpha Tools SA\",\"cnpj\":\"33.333.333/0001-33\"},\"order_status\":\"Alterar Pedido\"}",
-      "attributes": {
-        "ApproximateReceiveCount": "1",
-        "SentTimestamp": "1673379456921"
-      },
-      "messageAttributes": {},
-      "md5OfBody": "2fe5efb72c2f21c29a6c",
-      "eventSource": "aws:sqs",
-      "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:MinhaFila.fifo",
-      "awsRegion": "us-east-1"
+      "Records": [
+        {
+          "messageId": "11111111-aaaa-bbbb-cccc-111111111111",
+          "receiptHandle": "SomeReceiptHandle1",
+          "body": "{\"order_id\":\"AL-719\",\"customer\":{\"first_name\":\"Henry\",\"last_name\":\"Costela\",\"cpf\":\"380.412.796-78\",\"email\":\"vitor77@example.org\",\"phone\":\"+55 21 6012-1552\"},\"items\":[{\"product_id\":\"AT-005\",\"description\":\"Compressor de Ar\",\"quantity\":2,\"unit_price\":4000.0}],\"payment\":{\"method\":\"Cartão de Crédito\",\"transaction_id\":\"TXN-5608451249\",\"amount\":8000.0},\"company\":{\"name\":\"Alpha Tools SA\",\"cnpj\":\"33.333.333/0001-33\"},\"order_status\":\"Alterar Pedido\"}",
+          "attributes": {
+            "ApproximateReceiveCount": "1",
+            "SentTimestamp": "1673379456921"
+          },
+          "messageAttributes": {},
+          "md5OfBody": "2fe5efb72c2f21c29a6c",
+          "eventSource": "aws:sqs",
+          "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:MinhaFila.fifo",
+          "awsRegion": "us-east-1"
+        }
+      ]
     }
-  ]
-}
-
    ```
 4. Clique em **Save** e depois em **Test**.
 5. Verifique os **Logs** em **CloudWatch** para confirmar se o pedido foi validado e roteado corretamente.
