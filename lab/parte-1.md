@@ -225,7 +225,7 @@ def lambda_handler(event, context):
                     if send_to_fifo(order):
                         successful_orders.append(order)
                 else:
-                    logger.warning(f"Pedido {order['order_id']} ignorado devido ao status: {order['order_status']}")
+                    logger.warning(f"Pedido {order.get('order_id')} ignorado devido ao status: {order.get('order_status')}")
 
             # Registrar o arquivo no DynamoDB apenas se houver pedidos enviados
             if successful_orders:
@@ -249,7 +249,11 @@ def check_file_processed(file_name):
 def register_file_in_dynamodb(file_name):
     logger.info(f"Registrando arquivo {file_name} no DynamoDB.")
     table = dynamo_client.Table(DYNAMO_TABLE_NAME)
-    table.put_item(Item={"PK": f"FILE#{file_name}", "SK": "SUMMARY", "ProcessedAt": datetime.utcnow().isoformat()})
+    table.put_item(Item={
+        "PK": f"FILE#{file_name}",
+        "SK": "SUMMARY",
+        "ProcessedAt": datetime.utcnow().isoformat()
+    })
 
 def register_orders_in_dynamodb(orders, file_name):
     table = dynamo_client.Table(DYNAMO_TABLE_NAME)
@@ -294,17 +298,31 @@ def send_to_fifo(order):
         return False
 
 def should_process_order(order):
+    """
+    Ajustes principais:
+    - Substituímos "PedidoCancelado" por "Cancela Pedido"
+    - Substituímos "PedidoAlterado" por "Alterar Pedido"
+    - Mantivemos "Pendente" e "PedidoNovo".
+    """
+
     status = order['order_status']
     logger.debug(f"Verificando status do pedido {order['order_id']}: {status}")
-    if status in ["PedidoCancelado", "PedidoAlterado"]:
+
+    # Se for "Cancela Pedido" ou "Alterar Pedido", aceite sempre
+    if status in ["Cancela Pedido", "Alterar Pedido"]:
         return True
+
+    # Se for "Pendente" ou "PedidoNovo", cheque idempotência no item do Dynamo
     elif status in ["Pendente", "PedidoNovo"]:
         table = dynamo_client.Table(DYNAMO_TABLE_NAME)
         response = table.get_item(Key={"PK": f"ORDER#{order['order_id']}", "SK": f"STATUS#{status}"})
         exists = 'Item' in response
         logger.debug(f"Pedido {order['order_id']} com status {status} já existe? {exists}")
-        return not exists  # Só processa se não existir
+        return not exists  # só processa se não existir
+
+    # Caso contrário, não processa
     return False
+
 ~~~
 
 3. Clique em **Deploy** para salvar as alterações.
