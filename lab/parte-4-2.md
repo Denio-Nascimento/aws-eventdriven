@@ -399,7 +399,7 @@ def lambda_handler(event, context):
 			"Sid": "AllowGetParameter",
 			"Effect": "Allow",
 			"Action": "ssm:GetParameter",
-			"Resource": "arn:aws:ssm:us-east-1:884870024531:parameter/lab/pedido/table_name"
+			"Resource": "arn:aws:ssm:REGION:ACCOUNT_ID:parameter/lab/pedido/table_name"
 		},
 		{
 			"Sid": "AllowBatchWriteDynamo",
@@ -408,7 +408,7 @@ def lambda_handler(event, context):
 				"dynamodb:BatchWriteItem",
 				"dynamodb:UpdateItem"
 			],
-			"Resource": "arn:aws:dynamodb:us-east-1:884870024531:table/pedido"
+			"Resource": "arn:aws:dynamodb:REGION:ACCOUNT_ID:table/pedido"
 		},
 		{
 			"Sid": "AllowSQSTrigger",
@@ -418,7 +418,7 @@ def lambda_handler(event, context):
 				"sqs:DeleteMessage",
 				"sqs:GetQueueAttributes"
 			],
-			"Resource": "arn:aws:sqs:us-east-1:884870024531:sqs-pedido-alterado.fifo"
+			"Resource": "arn:aws:sqs:REGION:ACCOUNT_ID:sqs-pedido-alterado.fifo"
 		}
 	]
 }
@@ -553,9 +553,9 @@ Precisa de:
                 "ssm:GetParameter"
             ],
             "Resource": [
-                "arn:aws:sqs:us-east-1:884870024531:sqs-pedido-cancelado.fifo",
-                "arn:aws:ssm:us-east-1:884870024531:parameter/lab/pedido/table_name",
-                "arn:aws:dynamodb:us-east-1:884870024531:table/pedido"
+                "arn:aws:sqs:REGION:ACCOUNT_ID:sqs-pedido-cancelado.fifo",
+                "arn:aws:ssm:REGION:ACCOUNT_ID:parameter/lab/pedido/table_name",
+                "arn:aws:dynamodb:REGION:ACCOUNT_ID:table/pedido"
             ]
         }
     ]
