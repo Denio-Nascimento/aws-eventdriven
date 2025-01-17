@@ -45,12 +45,55 @@ Esta layer contém a função responsável por validar os campos obrigatórios d
 
 1. Copie o código abaixo e crie um arquivo com o nome `order_validation_layer.py`
 ~~~python
+import logging
+
+# Configure logger
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
 def validate_order(order):
-    required_fields = ["order_id", "customer", "items", "payment", "company", "order_status"]
-    for field in required_fields:
-        if field not in order:
-            return False
-    return order["order_status"] in ["PedidoNovo", "PedidoAlterado", "PedidoCancelado"]
+    if "order_status" not in order:
+        logger.warning("Pedido inválido: Campo 'order_status' ausente.")
+        return False
+
+    status = order["order_status"]
+
+    if status == "Pendente":
+        required_fields = ["order_id", "customer", "items", "payment", "company"]
+        for field in required_fields:
+            if field not in order:
+                logger.warning(
+                    f"Pedido inválido: Status='Pendente', mas campo obrigatório '{field}' não está presente."
+                )
+                return False
+        return True
+
+    elif status == "Alterar Pedido":
+        required_fields = ["order_id", "company", "items"]  # Mínimo para alteração
+        for field in required_fields:
+            if field not in order:
+                logger.warning(
+                    f"Pedido inválido: Status='Alterar Pedido', mas campo obrigatório '{field}' não está presente."
+                )
+                return False
+        return True
+
+    elif status == "Cancela Pedido":
+        required_fields = ["order_id", "company"]  # Mínimo para cancelamento
+        for field in required_fields:
+            if field not in order:
+                logger.warning(
+                    f"Pedido inválido: Status='Cancela Pedido', mas campo obrigatório '{field}' não está presente."
+                )
+                return False
+        return True
+
+    else:
+        logger.warning(
+            f"Pedido inválido: 'order_status' = '{status}' não é reconhecido."
+        )
+        return False
+
 ~~~
 
 2. Crie a pasta `python` e mova `order_validation_layer.py` para dentro.
